@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar Over Carousel</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <style>
+      /* Ensure horizontal dropdown doesn't look like default vertical one */
+      .horizontal-submenu > div {
+        flex-wrap: wrap !important; /* force wrap */
+        justify-content: center; /* center items */
+        gap: 1rem; /* space between items */
+      }
+
+      .navbar-nav {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .submenu-box {
+        flex: 0 1 140px; /* grow 0, shrink 1, basis 140px */
+        max-width: 140px;
+        padding: 10px;
+        border-radius: 8px;
+        background-color: #f8f9fa;
+        transition: transform 0.2s, background 0.3s;
+        color: #000;
+        text-align: center;
+      }
+
+      .submenu-box:hover {
+        background-color: #e9ecef;
+        transform: translateY(-5px);
+      }
+
+      .submenu-box img {
+        width: 60px;
+        height: 60px;
+        /* object-fit: cover; */
+      }
+
+      /* Make dropdown appear on hover (optional) */
+      .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
+
+      /* Dropdown Menu Custom Box Style */
+      .submenu-box {
+        padding: 1rem;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        min-width: 250px;
+      }
+
+      /* Each submenu item */
+      .submenu-item {
+        padding: 10px;
+        border-radius: 8px;
+        transition: background 0.3s;
+      }
+
+      .submenu-item:hover {
+        background-color: #e2e6ea;
+      }
+
+      /* Image styling */
+      .submenu-item img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+      }
+
+      .navbar-custom {
+        transition: background-color 0.3s ease;
+      }
+
+      .navbar-transparent {
+        background-color: transparent !important;
+      }
+
+      .navbar-scrolled {
+        background-color: white !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .carousel-item img {
+        height: 100vh;
+        object-fit: cover;
+      }
+
+      .navbar-nav .nav-link {
+        color: white !important;
+        transition: color 0.3s;
+      }
+
+      .navbar-scrolled .nav-link {
+        color: black !important;
+      }
+
+      .navbar-brand {
+        color: white !important;
+      }
+
+      .navbar-scrolled .navbar-brand {
+        color: black !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg fixed-top navbar-custom navbar-transparent"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">MySite</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <!-- Dropdown -->
+            <li class="nav-item dropdown position-static">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="servicesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Services
+              </a>
+
+              <div
+                class="dropdown-menu w-100 horizontal-submenu mt-0"
+                aria-labelledby="servicesDropdown"
+              >
+                <div class="d-flex justify-content-center gap-3 p-3 flex-wrap">
+                  <!-- Submenu Item -->
+                  <a
+                    href="#"
+                    class="submenu-box text-center text-decoration-none"
+                  >
+                    <img
+                      src="https://via.placeholder.com/80"
+                      class="img-fluid rounded mb-2"
+                      alt="Web"
+                    />
+                    <div>Web Development</div>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="submenu-box text-center text-decoration-none"
+                  >
+                    <img
+                      src="https://via.placeholder.com/80"
+                      class="img-fluid rounded mb-2"
+                      alt="App"
+                    />
+                    <div>App Development</div>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="submenu-box text-center text-decoration-none"
+                  >
+                    <img
+                      src="https://via.placeholder.com/80"
+                      class="img-fluid rounded mb-2"
+                      alt="SEO"
+                    />
+                    <div>SEO Optimization</div>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="submenu-box text-center text-decoration-none"
+                  >
+                    <img
+                      src="https://via.placeholder.com/80"
+                      class="img-fluid rounded mb-2"
+                      alt="Design"
+                    />
+                    <div>UI/UX Design</div>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Carousel -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="https://picsum.photos/id/1018/1600/900"
+            class="d-block w-100"
+            alt="Image 1"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Placeholder Content -->
+    <div class="container mt-5 pt-5">
+      <h2>Welcome to the Page</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus
+        efficitur nulla, ut efficitur magna iaculis et.
+      </p>
+      <p style="height: 1000px">Scroll down to see the effect...</p>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Scroll Effect Script -->
+    <script>
+      const navbar = document.querySelector(".navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.remove("navbar-transparent");
+          navbar.classList.add("navbar-scrolled");
+        } else {
+          navbar.classList.add("navbar-transparent");
+          navbar.classList.remove("navbar-scrolled");
+        }
+      });
+    </script>
+    <!-- Bigger Footer -->
+    <footer class="bg-dark text-white pt-5 pb-4 mt-5">
+      <div class="container text-md-left">
+        <div class="row text-md-left">
+          <!-- About -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              MySite
+            </h5>
+            <p>
+              MySite is your go-to platform for amazing content and services. We
+              bring you the best design, experience, and performance.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              Quick Links
+            </h5>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Home</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >About</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Services</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Contact</a
+              >
+            </p>
+          </div>
+
+          <!-- Contact -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              Contact
+            </h5>
+            <p><i class="bi bi-house-door-fill me-2"></i> New Delhi, India</p>
+            <p><i class="bi bi-envelope-fill me-2"></i> contact@mysite.com</p>
+            <p><i class="bi bi-telephone-fill me-2"></i> +91 9876543210</p>
+          </div>
+
+          <!-- Social -->
+          <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              Follow us
+            </h5>
+            <a href="#" class="text-white me-4"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="#" class="text-white me-4"
+              ><i class="bi bi-twitter"></i
+            ></a>
+            <a href="#" class="text-white me-4"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="#" class="text-white me-4"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+          </div>
+        </div>
+
+        <hr class="mb-4" />
+
+        <!-- Bottom Line -->
+        <div class="row align-items-center">
+          <div class="col-md-7 col-lg-8">
+            <p class="text-white">© 2025 MySite. All Rights Reserved.</p>
+          </div>
+          <div class="col-md-5 col-lg-4">
+            <p class="text-white text-end">Designed by You</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
