@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Our Story - Zenith Hospitality</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      /* Navbar */
+      .navbar-custom {
+        transition: background-color 0.4s ease, box-shadow 0.4s ease;
+      }
+
+      .navbar-transparent {
+        background-color: transparent !important;
+      }
+
+      .navbar-white {
+        background-color: white !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-nav {
+        margin: 0 auto;
+      }
+
+      .nav-link {
+        padding: 0.8rem 1rem;
+        font-weight: 500;
+      }
+
+      .dropdown-menu.horizontal-submenu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        border: none;
+        border-top: 1px solid #eee;
+        background-color: #fff;
+      }
+
+      .submenu-box {
+        width: 120px;
+      }
+
+      .submenu-box img {
+        width: 100%;
+        height: auto;
+      }
+
+      /* Carousel height for overlay effect */
+      .carousel,
+      .carousel-inner,
+      .carousel-item {
+        height: 100vh;
+      }
+
+      .carousel img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+
+      /* Our Story Section */
+      .story-section {
+        padding: 80px 20px;
+        background-color: #f8f9fa;
+      }
+
+      .story-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #2c3e50;
+      }
+
+      .story-subtitle {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #444;
+        margin-top: 30px;
+      }
+
+      .story-content {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #333;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #2c3e50;
+        color: white;
+        padding: 30px 0;
+      }
+
+      footer a {
+        color: #ddd;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: white;
+      }
+      .btn-outline-primary:hover {
+        background-color: #0d6efd;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg fixed-top navbar-custom navbar-transparent"
+    >
+      <div class="container">
+        <a class="navbar-brand text-white fw-bold" href="#">ABC</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav text-center">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown position-static">
+              <a
+                class="nav-link dropdown-toggle text-white"
+                href="#"
+                id="servicesDropdown"
+                data-bs-toggle="dropdown"
+                >Services</a
+              >
+              <div
+                class="dropdown-menu horizontal-submenu mt-0 p-3"
+                aria-labelledby="servicesDropdown"
+              >
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                  <a
+                    href="#"
+                    class="submenu-box text-center text-decoration-none"
+                  >
+                    <img
+                      src="https://via.placeholder.com/80"
+                      class="img-fluid rounded mb-2"
+                      alt="Holiday"
+                    />
+                    <div>Holidays</div>
+                  </a>
+                  <a
+                    href="#"
+                    class="submenu-box text-center text-decoration-none"
+                  >
+                    <img
+                      src="https://via.placeholder.com/80"
+                      class="img-fluid rounded mb-2"
+                      alt="Flights"
+                    />
+                    <div>Flights</div>
+                  </a>
+                  <!-- Add more submenu items if needed -->
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="our-story.html">Our Story</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Carousel -->
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+            class="d-block w-100"
+            alt="Travel"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Story Section -->
+    <section class="story-section">
+      <div class="container">
+        <h1 class="story-title text-center mb-4">Our Story</h1>
+        <h3 class="story-subtitle">1. About our Legacy</h3>
+        <p class="story-content">
+          Founded in 1997, <strong>Zenith Hospitality</strong> has built a
+          trusted legacy in the travel industry by consistently delivering
+          excellence and winning hearts across the globe. With a strong presence
+          and unmatched expertise, Zenith offers a comprehensive suite of
+          <strong>13 specialized verticals</strong> including:
+        </p>
+        <!-- Service Pills Section -->
+        <div class="container my-5">
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <button
+              type="button"
+              class="btn btn-outline-primary rounded-0 px-4 py-2"
+            >
+              Holidays
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary rounded-0 px-4 py-2"
+            >
+              Hotels
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary rounded-0 px-4 py-2"
+            >
+              Flights
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary rounded-0 px-4 py-2"
+            >
+              MICE
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary rounded-0 px-4 py-2"
+            >
+              Forex
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary rounded-0 px-4 py-2"
+            >
+              Visa
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary rounded-0 px-4 py-2"
+            >
+              Insurance
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary rounded-0 px-4 py-2"
+            >
+              Senior Citizen Tours
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary rounded-0 px-4 py-2"
+            >
+              Luxury Stays
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary rounded-0 px-4 py-2"
+            >
+              Weddings
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary rounded-0 px-4 py-2"
+            >
+              Orchid Incoming
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary rounded-0 px-4 py-2"
+            >
+              Events
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary rounded-0 px-4 py-2"
+            >
+              Umrah Services
+            </button>
+          </div>
+        </div>
+
+        <p class="story-content">
+          Backed by competitive pricing, personalized service, and a commitment
+          to quality, we ensure a seamless experience for every traveller. At
+          <strong>Zenith</strong>, we don’t just plan trips—we craft journeys
+          tailored to every need and destination.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-danger text-white pt-5 pb-4 mt-5">
+      <div class="container text-md-left">
+        <div class="row text-md-left">
+          <!-- About -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              MySite
+            </h5>
+            <p>
+              MySite is your go-to platform for amazing content and services. We
+              bring you the best design, experience, and performance.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              Quick Links
+            </h5>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Home</a
+              >
+            </p>
+            <p>
+              <a
+                href="AboutUs.html"
+                class="text-white"
+                style="text-decoration: none"
+                >About</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Services</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Contact</a
+              >
+            </p>
+          </div>
+
+          <!-- Contact -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              Contact
+            </h5>
+            <p><i class="bi bi-house-door-fill me-2"></i> New Delhi, India</p>
+            <p><i class="bi bi-envelope-fill me-2"></i> contact@mysite.com</p>
+            <p><i class="bi bi-telephone-fill me-2"></i> +91 9876543210</p>
+          </div>
+
+          <!-- Social -->
+          <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              Follow us
+            </h5>
+            <a href="#" class="text-white me-4"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="#" class="text-white me-4"
+              ><i class="bi bi-twitter"></i
+            ></a>
+            <a href="#" class="text-white me-4"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="#" class="text-white me-4"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+          </div>
+        </div>
+
+        <hr class="mb-4" />
+
+        <!-- Bottom Line -->
+        <div class="row align-items-center">
+          <div class="col-md-7 col-lg-8">
+            <p class="text-white">© 2025 MySite. All Rights Reserved.</p>
+          </div>
+          <div class="col-md-5 col-lg-4">
+            <p class="text-white text-end">Designed by You</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const navbar = document.querySelector(".navbar-custom");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.remove("navbar-transparent");
+          navbar.classList.add("navbar-white");
+          document
+            .querySelectorAll(".nav-link")
+            .forEach((el) => el.classList.remove("text-white"));
+        } else {
+          navbar.classList.add("navbar-transparent");
+          navbar.classList.remove("navbar-white");
+          document
+            .querySelectorAll(".nav-link")
+            .forEach((el) => el.classList.add("text-white"));
+        }
+      });
+    </script>
+  </body>
+</html>
