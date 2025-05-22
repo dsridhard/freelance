@@ -1,94 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Awards & Accolades</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <style>
-        .award-image {
-            max-height: 120px;
-            object-fit: contain;
-            margin-bottom: 15px;
-        }
+      .award-image {
+        max-height: 120px;
+        object-fit: contain;
+        margin-bottom: 15px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
-    <div class="container py-5 text-center">
-        <h2 class="mb-3 fw-bold text-uppercase">Awards & Accolades</h2>
-        <p class="mb-5 text-muted">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-
-        <div class="row g-4">
-            <!-- Award 1 -->
-            <div class="col-md-4">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/TripAdvisor_Certificate_of_Excellence_logo.svg"
-                    alt="Certificate of Excellence" class="award-image img-fluid">
-                <h5>2017</h5>
-                <p class="fw-bold">Certificate of Excellence</p>
-                <p class="text-muted small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt.</p>
-            </div>
-
-            <!-- Award 2 -->
-            <div class="col-md-4">
-                <img src="https://upload.wikimedia.org/wikipedia/en/e/ed/World_Travel_Awards_logo.png"
-                    alt="World Travel Awards" class="award-image img-fluid">
-                <h5>2017</h5>
-                <p class="fw-bold">World Travel Awards</p>
-                <p class="text-muted small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt.</p>
-            </div>
-
-            <!-- Award 3 -->
-            <div class="col-md-4">
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/66/World_Golf_Awards_Logo.svg/1280px-World_Golf_Awards_Logo.svg.png"
-                    alt="World Golf Award" class="award-image img-fluid">
-                <h5>2015</h5>
-                <p class="fw-bold">World Golf Award</p>
-                <p class="text-muted small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt.</p>
-            </div>
-
-            <!-- Award 4 -->
-            <div class="col-md-4">
-                <img src="https://upload.wikimedia.org/wikipedia/en/e/ed/World_Travel_Awards_logo.png"
-                    alt="Leading Design Hotel" class="award-image img-fluid">
-                <h5>October 2018</h5>
-                <p class="fw-bold">Leading Design Hotel</p>
-                <p class="text-muted small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt.</p>
-            </div>
-
-            <!-- Award 5 -->
-            <div class="col-md-4">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Tripadvisor_Travellers%27_Choice_Logo.svg"
-                    alt="Traveller’s Choice Award" class="award-image img-fluid">
-                <h5>2018</h5>
-                <p class="fw-bold">Traveller’s Choice Award</p>
-                <p class="text-muted small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt.</p>
-            </div>
-
-            <!-- Award 6 -->
-            <div class="col-md-4">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/D-Edge_logo_2021.svg"
-                    alt="Client of the Year" class="award-image img-fluid">
-                <h5>2019</h5>
-                <p class="fw-bold">Client of the Year</p>
-                <p class="text-muted small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt.</p>
-            </div>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top bg-light">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">ABC</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Our Story</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          </ul>
         </div>
+      </div>
+    </nav>
+
+    <div class="container py-5 text-center" style="margin-top: 70px">
+      <h2 class="mb-3 fw-bold text-uppercase">Awards & Accolades</h2>
+      <p class="mb-5 text-muted">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card bg-light text-dark h-100 p-3">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/3/3c/TripAdvisor_Certificate_of_Excellence_logo.svg"
+              alt="Certificate of Excellence"
+              class="award-image img-fluid mb-3"
+            />
+            <h5>2017</h5>
+            <p class="fw-bold">Certificate of Excellence</p>
+            <p class="small">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card bg-light text-dark h-100 p-3">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/e/ed/World_Travel_Awards_logo.png"
+              alt="World Travel Awards"
+              class="award-image img-fluid mb-3"
+            />
+            <h5>2017</h5>
+            <p class="fw-bold">World Travel Awards</p>
+            <p class="small">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card bg-light text-dark h-100 p-3">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/6/66/World_Golf_Awards_Logo.svg/1280px-World_Golf_Awards_Logo.svg.png"
+              alt="World Golf Award"
+              class="award-image img-fluid mb-3"
+            />
+            <h5>2015</h5>
+            <p class="fw-bold">World Golf Award</p>
+            <p class="small">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card bg-light text-dark h-100 p-3">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/e/ed/World_Travel_Awards_logo.png"
+              alt="Leading Design Hotel"
+              class="award-image img-fluid mb-3"
+            />
+            <h5>October 2018</h5>
+            <p class="fw-bold">Leading Design Hotel</p>
+            <p class="small">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card bg-light text-dark h-100 p-3">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Tripadvisor_Travellers%27_Choice_Logo.svg"
+              alt="Traveller’s Choice Award"
+              class="award-image img-fluid mb-3"
+            />
+            <h5>2018</h5>
+            <p class="fw-bold">Traveller’s Choice Award</p>
+            <p class="small">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card bg-light text-dark h-100 p-3">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/f/f5/D-Edge_logo_2021.svg"
+              alt="Client of the Year"
+              class="award-image img-fluid mb-3"
+            />
+            <h5>2019</h5>
+            <p class="fw-bold">Client of the Year</p>
+            <p class="small">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <footer class="bg-danger text-white pt-5 pb-4 mt-5">
+      <div class="container text-md-left">
+        <div class="row text-md-left">
+          <!-- About -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              MySite
+            </h5>
+            <p>
+              MySite is your go-to platform for amazing content and services. We
+              bring you the best design, experience, and performance.
+            </p>
+          </div>
 
+          <!-- Quick Links -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              Quick Links
+            </h5>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Home</a
+              >
+            </p>
+            <p>
+              <a
+                href="AboutUs.html"
+                class="text-white"
+                style="text-decoration: none"
+                >About</a
+              >
+            </p>
+            <p>
+              <a href="VM.html" class="text-white" style="text-decoration: none"
+                >Services</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Contact</a
+              >
+            </p>
+          </div>
+
+          <!-- Contact -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              Contact
+            </h5>
+            <p><i class="bi bi-house-door-fill me-2"></i> New Delhi, India</p>
+            <p><i class="bi bi-envelope-fill me-2"></i> contact@mysite.com</p>
+            <p><i class="bi bi-telephone-fill me-2"></i> +91 9876543210</p>
+          </div>
+
+          <!-- Social -->
+          <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              Follow us
+            </h5>
+            <a href="#" class="text-white me-4"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="#" class="text-white me-4"
+              ><i class="bi bi-twitter"></i
+            ></a>
+            <a href="#" class="text-white me-4"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="#" class="text-white me-4"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+          </div>
+        </div>
+
+        <hr class="mb-4" />
+
+        <!-- Bottom Line -->
+        <div class="row align-items-center">
+          <div class="col-md-7 col-lg-8">
+            <p class="text-white">© 2025 MySite. All Rights Reserved.</p>
+          </div>
+          <div class="col-md-5 col-lg-4">
+            <p class="text-white text-end">Designed by You</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

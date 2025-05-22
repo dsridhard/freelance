@@ -1,676 +1,752 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zenith Hospitality</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zenith Hospitality</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- AOS CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script>
+      const carousel = document.getElementById("heroCarousel");
 
-  <script>
-    const carousel = document.getElementById("heroCarousel");
+      carousel.addEventListener("slid.bs.carousel", function (e) {
+        const activeIndex = e.to;
 
-    carousel.addEventListener("slid.bs.carousel", function (e) {
-      const activeIndex = e.to;
+        if (activeIndex === 0) {
+          document.getElementById("slide1-keyword").innerText = "Homepage";
+        } else if (activeIndex === 1) {
+          document.getElementById("slide2-keyword").innerText = "Portfolio";
+        } else if (activeIndex === 2) {
+          document.getElementById("slide3-keyword").innerText = "Contact";
+        }
+      });
+    </script>
 
-      if (activeIndex === 0) {
-        document.getElementById("slide1-keyword").innerText = "Homepage";
-      } else if (activeIndex === 1) {
-        document.getElementById("slide2-keyword").innerText = "Portfolio";
-      } else if (activeIndex === 2) {
-        document.getElementById("slide3-keyword").innerText = "Contact";
+    <!-- Custom CSS -->
+    <style>
+      .bg-danger {
+        background-color: #af0d1a !important;
       }
-    });
-  </script>
 
-  <!-- Custom CSS -->
-  <style>
-    .bg-danger {
-      background-color: #af0d1a !important;
-    }
+      .text-danger {
+        color: #af0d1a !important;
+      }
 
-    .text-danger {
-      color: #af0d1a !important;
-    }
+      /* Ensure horizontal dropdown doesn't look like default vertical one */
+      .horizontal-submenu > div {
+        flex-wrap: wrap !important;
+        /* force wrap */
+        justify-content: center;
+        /* center items */
+        gap: 1rem;
+        /* space between items */
+      }
 
-    /* Ensure horizontal dropdown doesn't look like default vertical one */
-    .horizontal-submenu>div {
-      flex-wrap: wrap !important;
-      /* force wrap */
-      justify-content: center;
-      /* center items */
-      gap: 1rem;
-      /* space between items */
-    }
+      .navbar-nav {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
 
-    .navbar-nav {
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      width: 100%;
-    }
+      .submenu-box {
+        flex: 0 1 140px;
+        /* grow 0, shrink 1, basis 140px */
+        max-width: 140px;
+        padding: 10px;
+        border-radius: 8px;
+        background-color: #f8f9fa;
+        transition: transform 0.2s, background 0.3s;
+        color: #000;
+        text-align: center;
+      }
 
-    .submenu-box {
-      flex: 0 1 140px;
-      /* grow 0, shrink 1, basis 140px */
-      max-width: 140px;
-      padding: 10px;
-      border-radius: 8px;
-      background-color: #f8f9fa;
-      transition: transform 0.2s, background 0.3s;
-      color: #000;
-      text-align: center;
-    }
+      .submenu-box:hover {
+        background-color: #e9ecef;
+        transform: translateY(-5px);
+      }
 
-    .submenu-box:hover {
-      background-color: #e9ecef;
-      transform: translateY(-5px);
-    }
+      .submenu-box img {
+        width: 40px;
+        height: 60px;
+        /* object-fit: cover; */
+      }
 
-    .submenu-box img {
-      width: 40px;
-      height: 60px;
-      /* object-fit: cover; */
-    }
+      /* Make dropdown appear on hover (optional) */
+      .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
 
-    /* Make dropdown appear on hover (optional) */
-    .nav-item.dropdown:hover .dropdown-menu {
-      display: block;
-      margin-top: 0;
-    }
+      /* Dropdown Menu Custom Box Style */
+      .submenu-box {
+        padding: 1rem;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        min-width: 250px;
+      }
 
-    /* Dropdown Menu Custom Box Style */
-    .submenu-box {
-      padding: 1rem;
-      background-color: #f8f9fa;
-      border-radius: 10px;
-      min-width: 250px;
-    }
+      /* Each submenu item */
+      .submenu-item {
+        padding: 10px;
+        border-radius: 8px;
+        transition: background 0.3s;
+      }
 
-    /* Each submenu item */
-    .submenu-item {
-      padding: 10px;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
+      .submenu-item:hover {
+        background-color: #e2e6ea;
+      }
 
-    .submenu-item:hover {
-      background-color: #e2e6ea;
-    }
+      /* Image styling */
+      .submenu-item img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+      }
 
-    /* Image styling */
-    .submenu-item img {
-      width: 40px;
-      height: 40px;
-      object-fit: cover;
-    }
+      .navbar-custom {
+        transition: background-color 0.3s ease;
+      }
 
-    .navbar-custom {
-      transition: background-color 0.3s ease;
-    }
+      .navbar-transparent {
+        background-color: transparent !important;
+      }
 
-    .navbar-transparent {
-      background-color: transparent !important;
-    }
+      .navbar-scrolled {
+        background-color: white !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
 
-    .navbar-scrolled {
-      background-color: white !important;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
+      .carousel-item img {
+        height: 100vh;
+        object-fit: cover;
+      }
 
-    .carousel-item img {
-      height: 100vh;
-      object-fit: cover;
-    }
+      .navbar-nav .nav-link {
+        color: white !important;
+        transition: color 0.3s;
+      }
 
-    .navbar-nav .nav-link {
-      color: white !important;
-      transition: color 0.3s;
-    }
+      .navbar-scrolled .nav-link {
+        color: black !important;
+      }
 
-    .navbar-scrolled .nav-link {
-      color: black !important;
-    }
+      .navbar-brand {
+        color: white !important;
+      }
 
-    .navbar-brand {
-      color: white !important;
-    }
+      .navbar-scrolled .navbar-brand {
+        color: black !important;
+      }
 
-    .navbar-scrolled .navbar-brand {
-      color: black !important;
-    }
+      .carousel-caption {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        /* background-color: rgba(0, 0, 0, 0.4); */
+        /* Optional: adds semi-transparent background */
+        padding: 1rem;
+        border-radius: 10px;
+      }
 
-    .carousel-caption {
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: white;
-      /* background-color: rgba(0, 0, 0, 0.4); */
-      /* Optional: adds semi-transparent background */
-      padding: 1rem;
-      border-radius: 10px;
-    }
+      .swirl {
+        transition: transform 0.8s ease-in-out;
+      }
 
-    .swirl {
-      transition: transform 0.8s ease-in-out;
-    }
+      .swirl:hover {
+        transform: rotateY(10deg) scale(1.05);
+      }
 
-    .swirl:hover {
-      transform: rotateY(10deg) scale(1.05);
-    }
+      .image-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        /* optional */
+        background: rgba(0, 0, 0, 0.9);
+      }
 
-    .image-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 0.5rem;
-      /* optional */
-      background: rgba(0, 0, 0, 0.9);
-    }
+      .image-card img {
+        height: 350px;
+        width: 100%;
+        object-fit: cover;
+        display: block;
+      }
 
-    .image-card img {
-      height: 350px;
-      width: 100%;
-      object-fit: cover;
-      display: block;
-    }
+      /* Transparent overlay */
+      .image-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        /* Adjust opacity and color as needed */
+        pointer-events: none;
+        /* Allows clicking through the overlay if needed */
+      }
 
-    /* Transparent overlay */
-    .image-card::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.3);
-      /* Adjust opacity and color as needed */
-      pointer-events: none;
-      /* Allows clicking through the overlay if needed */
-    }
+      .overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        background: rgba(0, 0, 0, 0);
+        padding: 10px 20px;
+        font-weight: bold;
+        font-size: 1.5rem;
+        border-radius: 5px;
+        text-align: center;
+        white-space: nowrap;
+      }
 
+      .testimonial-section {
+        background-color: #fff4f3;
+        padding: 60px 20px;
+        text-align: center;
+      }
 
-    .overlay-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #fff;
-      background: rgba(0, 0, 0, 0);
-      padding: 10px 20px;
-      font-weight: bold;
-      font-size: 1.5rem;
-      border-radius: 5px;
-      text-align: center;
-      white-space: nowrap;
-    }
+      .testimonial-card {
+        background: #ffffff;
+        border-radius: 15px;
+        padding: 30px 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+      }
 
-    .testimonial-section {
-      background-color: #fff4f3;
-      padding: 60px 20px;
-      text-align: center;
-    }
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+      }
 
-    .testimonial-card {
-      background: #ffffff;
-      border-radius: 15px;
-      padding: 30px 20px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
-    }
+      .testimonial-img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 15px;
+      }
 
-    .testimonial-card:hover {
-      transform: translateY(-5px);
-    }
+      .testimonial-name {
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
 
-    .testimonial-img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 15px;
-    }
+      .testimonial-date {
+        color: #999;
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+      }
 
-    .testimonial-name {
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
+      .testimonial-text {
+        font-size: 0.95rem;
+        color: #333;
+      }
 
-    .testimonial-date {
-      color: #999;
-      font-size: 0.85rem;
-      margin-bottom: 10px;
-    }
+      .video-testimonials {
+        max-width: 1000px;
+        margin: auto;
+      }
 
-    .testimonial-text {
-      font-size: 0.95rem;
-      color: #333;
-    }
+      .video-testimonials h2 {
+        color: #0071ce;
+        margin-bottom: 20px;
+      }
 
-    .video-testimonials {
-      max-width: 1000px;
-      margin: auto;
-    }
+      .featured-video {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
 
-    .video-testimonials h2 {
-      color: #0071ce;
-      margin-bottom: 20px;
-    }
+      .video-details {
+        max-width: 400px;
+      }
 
-    .featured-video {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
+      .video-details h3 {
+        margin: 0;
+        color: #0071ce;
+      }
 
-    .video-details {
-      max-width: 400px;
-    }
+      .video-details p {
+        margin-top: 5px;
+      }
 
-    .video-details h3 {
-      margin: 0;
-      color: #0071ce;
-    }
+      .video-player {
+        position: relative;
+        width: 400px;
+        height: 225px;
+        background: #000;
+        border-radius: 8px;
+        overflow: hidden;
+      }
 
-    .video-details p {
-      margin-top: 5px;
-    }
+      .video-player img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
 
-    .video-player {
-      position: relative;
-      width: 400px;
-      height: 225px;
-      background: #000;
-      border-radius: 8px;
-      overflow: hidden;
-    }
+      .video-player::after {
+        content: "▶";
+        font-size: 40px;
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 50%;
+        padding: 10px 20px;
+      }
 
-    .video-player img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+      .more-videos {
+        margin-top: 30px;
+      }
 
-    .video-player::after {
-      content: "▶";
-      font-size: 40px;
-      color: #fff;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(0, 0, 0, 0.4);
-      border-radius: 50%;
-      padding: 10px 20px;
-    }
+      .more-videos h4 {
+        margin-bottom: 10px;
+      }
 
-    .more-videos {
-      margin-top: 30px;
-    }
+      .video-thumbnails {
+        display: flex;
+        overflow-x: auto;
+        gap: 15px;
+        padding-bottom: 10px;
+      }
 
-    .more-videos h4 {
-      margin-bottom: 10px;
-    }
+      .thumbnail {
+        min-width: 150px;
+        cursor: pointer;
+      }
 
-    .video-thumbnails {
-      display: flex;
-      overflow-x: auto;
-      gap: 15px;
-      padding-bottom: 10px;
-    }
+      .thumbnail img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
 
-    .thumbnail {
-      min-width: 150px;
-      cursor: pointer;
-    }
+      .thumbnail .video-title {
+        font-weight: bold;
+        color: #0071ce;
+      }
 
-    .thumbnail img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
+      .thumbnail .video-subtitle {
+        font-size: 0.85rem;
+        color: #555;
+      }
+    </style>
+  </head>
 
-    .thumbnail .video-title {
-      font-weight: bold;
-      color: #0071ce;
-    }
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg fixed-top  navbar-custom navbar-transparent"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">MySite</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    .thumbnail .video-subtitle {
-      font-size: 0.85rem;
-      color: #555;
-    }
-  </style>
-</head>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="servicesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Services
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                <li><a class="dropdown-item" href="./location.html">Locations</a></li>
+                <li><a class="dropdown-item" href="./">CSR</a></li>
+                <li><a class="dropdown-item" href="./verticals.html">Our Verticals</a></li>
+                <li>
+                  <a class="dropdown-item" href="./awards.html">Awards & Accolades</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="./aboutUs.html">AboutUs</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">ContactUs</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-<body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top navbar-custom navbar-transparent">
-    <div class="container">
-      <a class="navbar-brand" href="#">MySite</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <!-- Carousel -->
+    <div
+      id="heroCarousel"
+      class="carousel slide"
+      data-bs-ride="carousel"
+      data-bs-interval="3000"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="./assets/images/img1.jpg"
+            class="d-block w-100"
+            alt="Image 1"
+          />
+          <div class="carousel-caption">
+            <h3>Welcome to <span id="slide1-keyword">Slide 1</span></h3>
+            <p>
+              This is the <span id="slide1-desc">center text</span> for image 1.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./assets/images/img2.jpg"
+            class="d-block w-100"
+            alt="Image 2"
+          />
+          <div class="carousel-caption">
+            <h3>Welcome to <span id="slide1-keyword">Slide 2</span></h3>
+            <p>
+              This is the <span id="slide1-desc">center text</span> for image 2.
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./assets/images/img3.jpg"
+            class="d-block w-100"
+            alt="Image 3"
+          />
+          <div class="carousel-caption">
+            <h3>Welcome to <span id="slide1-keyword">Slide 3</span></h3>
+            <p>
+              This is the <span id="slide1-desc">center text</span> for image 3.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <!-- Dropdown -->
-          <li class="nav-item dropdown position-static">
-            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Services
-            </a>
+    <!-- Placeholder Content -->
+    <div
+      class="position-relative text-center text-white"
+      style="height: 100vh; overflow: hidden"
+    >
+      <!-- Fullscreen Image -->
+      <img
+        src="./assets/images/img2.jpg"
+        class="position-absolute top-0 start-0 w-100 h-100"
+        style="object-fit: cover; z-index: 0"
+        alt="Background Image"
+      />
 
-            <div class="dropdown-menu w-100 horizontal-submenu mt-0" aria-labelledby="servicesDropdown">
-              <div class="d-flex justify-content-center gap-3 p-3 flex-wrap">
-                <!-- Submenu Item -->
-                <a href="#" class="submenu-box text-center text-decoration-none">
-                  <img src="https://via.placeholder.com/80" class="img-fluid rounded mb-2" alt="Web" />
-                  <div>Web Development</div>
-                </a>
+      <!-- Transparent Overlay -->
+      <div
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.65);
+          z-index: 1;
+        "
+      ></div>
 
-                <a href="#" class="submenu-box text-center text-decoration-none">
-                  <img src="https://via.placeholder.com/80" class="img-fluid rounded mb-2" alt="App" />
-                  <div>App Development</div>
-                </a>
+      <!-- Centered Content -->
+      <div
+        class="position-absolute top-50 start-50 translate-middle text-center px-3"
+        style="z-index: 2; max-width: 700px"
+      >
+        <h1 class="display-4 fw-bold mb-3">
+          <span class="text-danger">About </span>our Legacy
+        </h1>
+        <p class="lead mb-4">
+          Founded in 1997, <strong>Zenith Hospitality</strong> has built a
+          trusted legacy in the travel industry by consistently delivering
+          excellence and winning hearts across the globe.
+        </p>
+        <a
+          href="./AboutUs.html"
+          class="btn btn-outline-light px-4 py-2 rounded-pill"
+          >Read More</a
+        >
+      </div>
+    </div>
 
-                <a href="#" class="submenu-box text-center text-decoration-none">
-                  <img src="https://via.placeholder.com/80" class="img-fluid rounded mb-2" alt="SEO" />
-                  <div>SEO Optimization</div>
-                </a>
+    <div class="container mt-4 pt-4">
+      <h2>Our Verticals</h2>
+      <p>Our diverse portfolio</p>
+      <div class="container py-5">
+        <div class="row g-1">
+          <div class="col-md-4" data-aos="flip-left" data-aos-duration="1000">
+            <div class="image-card">
+              <img src="./assets/images/img1.jpg" alt="Holidays" />
+              <div class="overlay-text">Holidays</div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="flip-left" data-aos-duration="1200">
+            <div class="image-card">
+              <img src="./assets/images/img2.jpg" alt="Hotels" />
+              <div class="overlay-text">Hotels</div>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="flip-left" data-aos-duration="1400">
+            <div class="image-card">
+              <img src="./assets/images/img3.jpg" alt="Flights" />
+              <div class="overlay-text">Flights</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-                <a href="#" class="submenu-box text-center text-decoration-none">
-                  <img src="https://via.placeholder.com/80" class="img-fluid rounded mb-2" alt="Design" />
-                  <div>UI/UX Design</div>
-                </a>
+    <section class="testimonial-section">
+      <h2 class="mb-5 fw-bold">What Our Customer Say</h2>
+      <div class="container">
+        <div class="row justify-content-center g-4">
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <img
+                src="https://randomuser.me/api/portraits/women/1.jpg"
+                alt="Anna"
+                class="testimonial-img"
+              />
+              <div class="testimonial-name">Anna Sthesia</div>
+              <div class="testimonial-date">January 21, 2020</div>
+              <div class="testimonial-text">
+                "It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout."
               </div>
             </div>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Carousel -->
-  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="./assets/images/img1.jpg" class="d-block w-100" alt="Image 1" />
-        <div class="carousel-caption">
-          <h3>Welcome to <span id="slide1-keyword">Slide 1</span></h3>
-          <p>
-            This is the <span id="slide1-desc">center text</span> for image 1.
-          </p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="./assets/images/img2.jpg" class="d-block w-100" alt="Image 2" />
-        <div class="carousel-caption">
-          <h3>Welcome to <span id="slide1-keyword">Slide 2</span></h3>
-          <p>
-            This is the <span id="slide1-desc">center text</span> for image 2.
-          </p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="./assets/images/img3.jpg" class="d-block w-100" alt="Image 3" />
-        <div class="carousel-caption">
-          <h3>Welcome to <span id="slide1-keyword">Slide 3</span></h3>
-          <p>
-            This is the <span id="slide1-desc">center text</span> for image 3.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Placeholder Content -->
-  <div class="position-relative text-center text-white" style="height: 100vh; overflow: hidden;">
-
-    <!-- Fullscreen Image -->
-    <img src="./assets/images/img2.jpg" class="position-absolute top-0 start-0 w-100 h-100"
-      style="object-fit: cover; z-index: 0;" alt="Background Image" />
-
-    <!-- Transparent Overlay -->
-    <div style="
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.65);
-    z-index: 1;">
-    </div>
-
-    <!-- Centered Content -->
-    <div class="position-absolute top-50 start-50 translate-middle text-center px-3"
-      style="z-index: 2; max-width: 700px;">
-      <h1 class="display-4 fw-bold mb-3"><span class="text-danger">About </span>our Legacy</h1>
-      <p class="lead mb-4">
-        Founded in 1997, <strong>Zenith Hospitality</strong> has built a trusted legacy in the travel industry by
-        consistently
-        delivering excellence and winning hearts across the globe.
-      </p>
-      <a href="#about" class="btn btn-outline-light px-4 py-2 rounded-pill">Read More</a>
-    </div>
-
-  </div>
-
-
-
-  <div class="container mt-4 pt-4">
-    <h2>Our Verticals</h2>
-    <p>Our diverse portfolio</p>
-    <div class="container py-5">
-      <div class="row g-1">
-        <div class="col-md-4" data-aos="flip-left" data-aos-duration="1000">
-          <div class="image-card">
-            <img src="./assets/images/img1.jpg" alt="Holidays" />
-            <div class="overlay-text">Holidays</div>
           </div>
-        </div>
-        <div class="col-md-4" data-aos="flip-left" data-aos-duration="1200">
-          <div class="image-card">
-            <img src="./assets/images/img2.jpg" alt="Hotels" />
-            <div class="overlay-text">Hotels</div>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="flip-left" data-aos-duration="1400">
-          <div class="image-card">
-            <img src="./assets/images/img3.jpg" alt="Flights" />
-            <div class="overlay-text">Flights</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <section class="testimonial-section">
-    <h2 class="mb-5 fw-bold">What Our Customer Say</h2>
-    <div class="container">
-      <div class="row justify-content-center g-4">
-        <div class="col-md-4">
-          <div class="testimonial-card">
-            <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Anna" class="testimonial-img" />
-            <div class="testimonial-name">Anna Sthesia</div>
-            <div class="testimonial-date">January 21, 2020</div>
-            <div class="testimonial-text">
-              "It is a long established fact that a reader will be distracted
-              by the readable content of a page when looking at its layout."
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Mario"
+                class="testimonial-img"
+              />
+              <div class="testimonial-name">Mario Speedwagon</div>
+              <div class="testimonial-date">January 21, 2020</div>
+              <div class="testimonial-text">
+                "It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout."
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="testimonial-card">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mario" class="testimonial-img" />
-            <div class="testimonial-name">Mario Speedwagon</div>
-            <div class="testimonial-date">January 21, 2020</div>
-            <div class="testimonial-text">
-              "It is a long established fact that a reader will be distracted
-              by the readable content of a page when looking at its layout."
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="testimonial-card">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Angelina" class="testimonial-img" />
-            <div class="testimonial-name">Angelina Juli</div>
-            <div class="testimonial-date">January 21, 2020</div>
-            <div class="testimonial-text">
-              "It is a long established fact that a reader will be distracted
-              by the readable content of a page when looking at its layout."
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <img
+                src="https://randomuser.me/api/portraits/women/44.jpg"
+                alt="Angelina"
+                class="testimonial-img"
+              />
+              <div class="testimonial-name">Angelina Juli</div>
+              <div class="testimonial-date">January 21, 2020</div>
+              <div class="testimonial-text">
+                "It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout."
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <div class="video-testimonials mt-3">
-    <h2>Video Testimonials</h2>
+    <div class="video-testimonials mt-3">
+      <h2>Video Testimonials</h2>
 
-    <div class="featured-video">
-      <div class="video-details">
-        <h3>AR Salon</h3>
-        <p><strong>Arnil Pabalan</strong></p>
-        <p>
-          "I love Booker. I think Booker has made a big difference in my
-          industry. My growth, when I got Booker, doubled!"
-        </p>
-      </div>
-      <div class="video-player">
-        <img src="https://via.placeholder.com/400x225.png?text=AR+Salon+Video" alt="Video Thumbnail" />
-      </div>
-    </div>
-
-    <div class="more-videos ">
-      <h4>More Videos</h4>
-      <div class="video-thumbnails">
-        <div class="thumbnail">
-          <img src="https://via.placeholder.com/150x90.png?text=AR+Salon" alt="AR Salon" />
-          <div class="video-title">AR Salon</div>
-          <div class="video-subtitle">Salon</div>
-        </div>
-        <div class="thumbnail">
-          <img src="https://via.placeholder.com/150x90.png?text=Willow+Creek" alt="Willow Creek" />
-          <div class="video-title">Willow Creek Day Spa</div>
-          <div class="video-subtitle">Day Spa</div>
-        </div>
-        <div class="thumbnail">
-          <img src="https://via.placeholder.com/150x90.png?text=LashSpot+Spa" alt="LashSpot" />
-          <div class="video-title">LashSpot Spa</div>
-          <div class="video-subtitle">LashSpot Spa</div>
-        </div>
-        <div class="thumbnail">
-          <img src="https://via.placeholder.com/150x90.png?text=Day+Spa" alt="Day Spa" />
-          <div class="video-title">Day Spa Association</div>
-          <div class="video-subtitle">Day Spa</div>
-        </div>
-        <div class="thumbnail">
-          <img src="https://via.placeholder.com/150x90.png?text=ME+Spa" alt="ME Spa" />
-          <div class="video-title">ME Spa</div>
-          <div class="video-subtitle">Spa</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Scroll Effect Script -->
-  <script>
-    const navbar = document.querySelector(".navbar");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
-        navbar.classList.remove("navbar-transparent");
-        navbar.classList.add("navbar-scrolled");
-      } else {
-        navbar.classList.add("navbar-transparent");
-        navbar.classList.remove("navbar-scrolled");
-      }
-    });
-  </script>
-  <!-- Bigger Footer -->
-  <footer class="bg-danger text-white pt-5 pb-4 mt-5">
-    <div class="container text-md-left">
-      <div class="row text-md-left">
-        <!-- About -->
-        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
-            MySite
-          </h5>
+      <div class="featured-video">
+        <div class="video-details">
+          <h3>AR Salon</h3>
+          <p><strong>Arnil Pabalan</strong></p>
           <p>
-            MySite is your go-to platform for amazing content and services. We
-            bring you the best design, experience, and performance.
+            "I love Booker. I think Booker has made a big difference in my
+            industry. My growth, when I got Booker, doubled!"
           </p>
         </div>
-
-        <!-- Quick Links -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
-            Quick Links
-          </h5>
-          <p>
-            <a href="#" class="text-white" style="text-decoration: none">Home</a>
-          </p>
-          <p>
-            <a href="AboutUs.html" class="text-white" style="text-decoration: none">About</a>
-          </p>
-          <p>
-            <a href="VM.html" class="text-white" style="text-decoration: none">Services</a>
-          </p>
-          <p>
-            <a href="#" class="text-white" style="text-decoration: none">Contact</a>
-          </p>
-        </div>
-
-        <!-- Contact -->
-        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
-            Contact
-          </h5>
-          <p><i class="bi bi-house-door-fill me-2"></i> New Delhi, India</p>
-          <p><i class="bi bi-envelope-fill me-2"></i> contact@mysite.com</p>
-          <p><i class="bi bi-telephone-fill me-2"></i> +91 9876543210</p>
-        </div>
-
-        <!-- Social -->
-        <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
-            Follow us
-          </h5>
-          <a href="#" class="text-white me-4"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="text-white me-4"><i class="bi bi-twitter"></i></a>
-          <a href="#" class="text-white me-4"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="text-white me-4"><i class="bi bi-linkedin"></i></a>
+        <div class="video-player">
+          <img
+            src="https://via.placeholder.com/400x225.png?text=AR+Salon+Video"
+            alt="Video Thumbnail"
+          />
         </div>
       </div>
 
-      <hr class="mb-4" />
-
-      <!-- Bottom Line -->
-      <div class="row align-items-center">
-        <div class="col-md-7 col-lg-8">
-          <p class="text-white">© 2025 MySite. All Rights Reserved.</p>
-        </div>
-        <div class="col-md-5 col-lg-4">
-          <p class="text-white text-end">Designed by You</p>
+      <div class="more-videos">
+        <h4>More Videos</h4>
+        <div class="video-thumbnails">
+          <div class="thumbnail">
+            <img
+              src="https://via.placeholder.com/150x90.png?text=AR+Salon"
+              alt="AR Salon"
+            />
+            <div class="video-title">AR Salon</div>
+            <div class="video-subtitle">Salon</div>
+          </div>
+          <div class="thumbnail">
+            <img
+              src="https://via.placeholder.com/150x90.png?text=Willow+Creek"
+              alt="Willow Creek"
+            />
+            <div class="video-title">Willow Creek Day Spa</div>
+            <div class="video-subtitle">Day Spa</div>
+          </div>
+          <div class="thumbnail">
+            <img
+              src="https://via.placeholder.com/150x90.png?text=LashSpot+Spa"
+              alt="LashSpot"
+            />
+            <div class="video-title">LashSpot Spa</div>
+            <div class="video-subtitle">LashSpot Spa</div>
+          </div>
+          <div class="thumbnail">
+            <img
+              src="https://via.placeholder.com/150x90.png?text=Day+Spa"
+              alt="Day Spa"
+            />
+            <div class="video-title">Day Spa Association</div>
+            <div class="video-subtitle">Day Spa</div>
+          </div>
+          <div class="thumbnail">
+            <img
+              src="https://via.placeholder.com/150x90.png?text=ME+Spa"
+              alt="ME Spa"
+            />
+            <div class="video-title">ME Spa</div>
+            <div class="video-subtitle">Spa</div>
+          </div>
         </div>
       </div>
     </div>
-  </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-</body>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Scroll Effect Script -->
+    <script>
+      const navbar = document.querySelector(".navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.remove("navbar-transparent");
+          navbar.classList.add("navbar-scrolled");
+        } else {
+          navbar.classList.add("navbar-transparent");
+          navbar.classList.remove("navbar-scrolled");
+        }
+      });
+    </script>
+    <!-- Bigger Footer -->
+    <footer class="bg-danger text-white pt-5 pb-4 mt-5">
+      <div class="container text-md-left">
+        <div class="row text-md-left">
+          <!-- About -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              MySite
+            </h5>
+            <p>
+              MySite is your go-to platform for amazing content and services. We
+              bring you the best design, experience, and performance.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              Quick Links
+            </h5>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Home</a
+              >
+            </p>
+            <p>
+              <a
+                href="AboutUs.html"
+                class="text-white"
+                style="text-decoration: none"
+                >About</a
+              >
+            </p>
+            <p>
+              <a href="VM.html" class="text-white" style="text-decoration: none"
+                >Services</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Contact</a
+              >
+            </p>
+          </div>
+
+          <!-- Contact -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              Contact
+            </h5>
+            <p><i class="bi bi-house-door-fill me-2"></i> New Delhi, India</p>
+            <p><i class="bi bi-envelope-fill me-2"></i> contact@mysite.com</p>
+            <p><i class="bi bi-telephone-fill me-2"></i> +91 9876543210</p>
+          </div>
+
+          <!-- Social -->
+          <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              Follow us
+            </h5>
+            <a href="#" class="text-white me-4"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="#" class="text-white me-4"
+              ><i class="bi bi-twitter"></i
+            ></a>
+            <a href="#" class="text-white me-4"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="#" class="text-white me-4"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+          </div>
+        </div>
+
+        <hr class="mb-4" />
+
+        <!-- Bottom Line -->
+        <div class="row align-items-center">
+          <div class="col-md-7 col-lg-8">
+            <p class="text-white">© 2025 MySite. All Rights Reserved.</p>
+          </div>
+          <div class="col-md-5 col-lg-4">
+            <p class="text-white text-end">Designed by You</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
 </html>
