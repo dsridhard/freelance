@@ -1,411 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Zenith Location</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <style>
-      /* Location List Styles */
-      .location-list {
-        max-height: 480px;
-        overflow-y: auto;
-        border-radius: 0.5rem;
-        box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
-        cursor: pointer;
-        padding-left: 0;
-      }
 
-      .location-item {
-        display: flex;
-        align-items: center;
-        font-weight: 500;
-        transition: background-color 0.25s, color 0.25s;
-        padding: 0.5rem 1rem;
-        list-style: none;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <title>Zenith Location</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    /* Location List Styles */
+    .location-list {
+      max-height: 480px;
+      overflow-y: auto;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+      cursor: pointer;
+      padding-left: 0;
+    }
 
-      .location-item:hover {
-        background-color: #e7f1ff;
-        color: #0d6efd;
-      }
+    .location-item {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      transition: background-color 0.25s, color 0.25s;
+      padding: 0.5rem 1rem;
+      list-style: none;
+    }
 
-      .location-item.active {
-        background-color: #0d6efd;
-        color: white;
-      }
+    .location-item:hover {
+      background-color: #e7f1ff;
+      color: #0d6efd;
+    }
 
-      .location-item i {
-        font-size: 1rem;
-        color: #0d6efd;
-        min-width: 20px;
-        margin-right: 0.5rem;
-      }
+    .location-item.active {
+      background-color: #0d6efd;
+      color: white;
+    }
 
-      /* Scrollbar styling */
-      .location-list::-webkit-scrollbar {
-        width: 8px;
-      }
+    .location-item i {
+      font-size: 1rem;
+      color: #0d6efd;
+      min-width: 20px;
+      margin-right: 0.5rem;
+    }
 
-      .location-list::-webkit-scrollbar-thumb {
-        background-color: #0d6efd88;
-        border-radius: 4px;
-      }
+    /* Scrollbar styling */
+    .location-list::-webkit-scrollbar {
+      width: 8px;
+    }
 
-      .location-list::-webkit-scrollbar-track {
-        background-color: #f0f0f0;
-      }
+    .location-list::-webkit-scrollbar-thumb {
+      background-color: #0d6efd88;
+      border-radius: 4px;
+    }
 
-      /* Map container */
-      #indiaMap {
-        width: 100%;
-        height: 500px;
-        border-radius: 0.5rem;
-        box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
-      }
+    .location-list::-webkit-scrollbar-track {
+      background-color: #f0f0f0;
+    }
 
-      /* Custom marker SVG style */
-      .custom-marker {
-        pointer-events: auto;
-        cursor: pointer;
-        fill: #0d6efd;
-        stroke: white;
-        stroke-width: 1.5px;
-        width: 24px;
-        height: 24px;
-        transform: translate(-12px, -24px);
-      }
-    </style>
-    <!-- amCharts -->
-    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/geodata/indiaLow.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-  </head>
-  <body>
-       <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand" href="#">MySite</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    .location-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-        <div
-          class="collapse navbar-collapse justify-content-center"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
-            <!-- Dropdown -->
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="servicesDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Services
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                <li>
-                  <a class="dropdown-item" href="./location.html">Locations</a>
-                </li>
-                <li><a class="dropdown-item" href="./">CSR</a></li>
-                <li>
-                  <a class="dropdown-item" href="./verticals.html"
-                    >Our Verticals</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./awards.html"
-                    >Awards & Accolades</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./aboutUs.html">AboutUs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./ContactUS.html">ContactUs</a>
-            </li>
-          </ul>
+    .location-item {
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 6px;
+      margin-bottom: 6px;
+      transition: background 0.3s ease;
+    }
+
+    /* Gradient background for active item */
+    .location-item.active {
+      background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+      font-weight: bold;
+    }
+
+    .location-item:hover:not(.active) {
+      background-color: #f0f0f0;
+    }
+
+    /* Map container */
+    #indiaMap {
+      width: 100%;
+      height: 500px;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+    }
+
+    /* Custom marker SVG style */
+    .custom-marker {
+      pointer-events: auto;
+      cursor: pointer;
+      fill: #0d6efd;
+      stroke: white;
+      stroke-width: 1.5px;
+      width: 24px;
+      height: 24px;
+      transform: translate(-12px, -24px);
+    }
+
+    /* Default transparent navbar */
+    .navbar-custom {
+      background-color: transparent;
+      transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    /* On scroll: dark transparent */
+    .navbar-scrolled {
+      background-color: rgba(0, 0, 0, 0.85) !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Navbar link colors */
+    .navbar-custom .nav-link {
+      color: white;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-custom .nav-link:hover,
+    .navbar-custom .nav-link:focus {
+      color: #f0f0f0;
+    }
+
+    /* Dropdown menu adjustments */
+    .navbar-custom .dropdown-menu {
+      background-color: rgba(255, 255, 255, 0.95);
+      border: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar-nav .dropdown:hover .dropdown-menu {
+      display: block;
+      margin-top: 0;
+      /* prevent gap */
+    }
+
+    .locations-heading {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    .locations-heading::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: #6c757d;
+      /* Bootstrap gray */
+      margin: 8px auto 0;
+      border-radius: 2px;
+    }
+  </style>
+  <!-- amCharts -->
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/geodata/indiaLow.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-custom navbar-transparent">
+    <div class="container">
+      <a class="navbar-brand" href="#">Zenith Hospitality</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Services</a>
+            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+              <li><a class="dropdown-item" href="./location.html">Locations</a></li>
+              <li><a class="dropdown-item" href="./CSR.html">CSR</a></li>
+              <li><a class="dropdown-item" href="./verticals.html">Our Verticals</a></li>
+              <li><a class="dropdown-item" href="./awards.html">Awards & Accolades</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="./aboutUs.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="./ContactUS.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Image and Text -->
+  <div class="position-relative">
+    <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff" alt="Hospitality Image"
+      class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+
+    <!-- Overlay Text -->
+    <div class="position-absolute top-50 start-50 translate-middle text-white text-center"
+      style="text-shadow: 1px 1px 5px rgba(0,0,0,0.7);">
+      <h2>Welcome to Zenith Hospitality</h2>
+      <p>Where Luxury Meets Comfort</p>
+    </div>
+  </div>
+
+  <div class="container text-center my-5">
+    <h2 class="locations-heading text-dark">Explore Our Locations</h2>
+  </div>
+
+
+
+
+
+
+
+  <!-- Location List -->
+  <div class="container py-4">
+    <div class="row">
+      <!-- Location List -->
+      <div class="col-md-4">
+        <h6>
+          <strong>Head Office:</strong>
+          <span class="text-primary">Delhi</span>
+        </h6>
+        <p><strong>Locations:</strong></p>
+        <ul class="location-list">
+          <li class="location-item active" data-city="Delhi">Delhi</li>
+          <li class="location-item" data-city="Agra">Agra</li>
+          <li class="location-item" data-city="Bengaluru">Bengaluru</li>
+          <li class="location-item" data-city="Bhutan">Bhutan</li>
+          <li class="location-item" data-city="Bikaner">Bikaner</li>
+          <li class="location-item" data-city="Bodhgaya">Bodhgaya</li>
+          <li class="location-item" data-city="Chennai">Chennai</li>
+          <li class="location-item" data-city="Goa">Goa</li>
+          <li class="location-item" data-city="Hyderabad">Hyderabad</li>
+          <li class="location-item" data-city="Jaipur">Jaipur</li>
+          <li class="location-item" data-city="Jaisalmer">Jaisalmer</li>
+          <li class="location-item" data-city="Jodhpur">Jodhpur</li>
+          <li class="location-item" data-city="Kochi">Kochi</li>
+          <li class="location-item" data-city="Kolkata">Kolkata</li>
+          <li class="location-item" data-city="Maldives">Maldives</li>
+        </ul>
+      </div>
+      <div class="col-md-8">
+        <div id="indiaMap"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- India Map -->
+
+  </div>
+  </div>
+  <footer class="bg-dark text-white pt-5 pb-4 mt-5">
+    <div class="container text-md-left">
+      <div class="row text-md-left">
+        <!-- About -->
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+            MySite
+          </h5>
+          <p>
+            MySite is your go-to platform for amazing content and services. We
+            bring you the best design, experience, and performance.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+            Quick Links
+          </h5>
+          <p>
+            <a href="#" class="text-white" style="text-decoration: none">Home</a>
+          </p>
+          <p>
+            <a href="AboutUs.html" class="text-white" style="text-decoration: none">About</a>
+          </p>
+          <p>
+            <a href="VM.html" class="text-white" style="text-decoration: none">Services</a>
+          </p>
+          <p>
+            <a href="#" class="text-white" style="text-decoration: none">Contact</a>
+          </p>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+            Contact
+          </h5>
+          <p><i class="bi bi-house-door-fill me-2"></i> New Delhi, India</p>
+          <p><i class="bi bi-envelope-fill me-2"></i> contact@mysite.com</p>
+          <p><i class="bi bi-telephone-fill me-2"></i> +91 9876543210</p>
+        </div>
+
+        <!-- Social -->
+        <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+            Follow us
+          </h5>
+          <a href="#" class="text-white me-4"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white me-4"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="text-white me-4"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-white me-4"><i class="bi bi-linkedin"></i></a>
         </div>
       </div>
-    </nav>
-    <div class="container py-4">
-      <div class="row">
-        <!-- Location List -->
-        <div class="col-md-4">
-          <h6>
-            <strong>Head Office:</strong>
-            <span class="text-primary">Delhi</span>
-          </h6>
-          <p><strong>Locations:</strong></p>
-          <ul class="location-list">
-            <li class="location-item active" data-city="Delhi">
-              <i class="bi bi-geo-alt-fill"></i>Delhi
-            </li>
-            <li class="location-item" data-city="Agra">
-              <i class="bi bi-geo-alt-fill"></i>Agra
-            </li>
-            <li class="location-item" data-city="Bengaluru">
-              <i class="bi bi-geo-alt-fill"></i>Bengaluru
-            </li>
-            <li class="location-item" data-city="Bhutan">
-              <i class="bi bi-geo-alt-fill"></i>Bhutan
-            </li>
-            <li class="location-item" data-city="Bikaner">
-              <i class="bi bi-geo-alt-fill"></i>Bikaner
-            </li>
-            <li class="location-item" data-city="Bodhgaya">
-              <i class="bi bi-geo-alt-fill"></i>Bodhgaya
-            </li>
-            <li class="location-item" data-city="Chennai">
-              <i class="bi bi-geo-alt-fill"></i>Chennai
-            </li>
-            <li class="location-item" data-city="Goa">
-              <i class="bi bi-geo-alt-fill"></i>Goa
-            </li>
-            <li class="location-item" data-city="Hyderabad">
-              <i class="bi bi-geo-alt-fill"></i>Hyderabad
-            </li>
-            <li class="location-item" data-city="Jaipur">
-              <i class="bi bi-geo-alt-fill"></i>Jaipur
-            </li>
-            <li class="location-item" data-city="Jaisalmer">
-              <i class="bi bi-geo-alt-fill"></i>Jaisalmer
-            </li>
-            <li class="location-item" data-city="Jodhpur">
-              <i class="bi bi-geo-alt-fill"></i>Jodhpur
-            </li>
-            <li class="location-item" data-city="Kochi">
-              <i class="bi bi-geo-alt-fill"></i>Kochi
-            </li>
-            <li class="location-item" data-city="Kolkata">
-              <i class="bi bi-geo-alt-fill"></i>Kolkata
-            </li>
-            <li class="location-item" data-city="Maldives">
-              <i class="bi bi-geo-alt-fill"></i>Maldives
-            </li>
-          </ul>
-        </div>
 
-        <!-- India Map -->
-        <div class="col-md-8">
-          <div id="indiaMap"></div>
+      <hr class="mb-4" />
+
+      <!-- Bottom Line -->
+      <div class="row align-items-center">
+        <div class="col-md-7 col-lg-8">
+          <p class="text-white">© 2025 MySite. All Rights Reserved.</p>
+        </div>
+        <div class="col-md-5 col-lg-4">
+          <p class="text-white text-end">Designed by You</p>
         </div>
       </div>
     </div>
-    <footer class="bg-danger text-white pt-5 pb-4 mt-5">
-      <div class="container text-md-left">
-        <div class="row text-md-left">
-          <!-- About -->
-          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
-              MySite
-            </h5>
-            <p>
-              MySite is your go-to platform for amazing content and services. We
-              bring you the best design, experience, and performance.
-            </p>
-          </div>
+  </footer>
+  <script>
+    // Coordinates (approximate)
+    const cityCoordinates = {
+      Agra: { latitude: 27.1767, longitude: 78.0081 },
+      Bengaluru: { latitude: 12.9716, longitude: 77.5946 },
+      Bhutan: { latitude: 27.5142, longitude: 90.4336 }, // outside India
+      Bikaner: { latitude: 28.0229, longitude: 73.3119 },
+      Bodhgaya: { latitude: 24.6961, longitude: 84.991 },
+      Chennai: { latitude: 13.0827, longitude: 80.2707 },
+      Delhi: { latitude: 28.6139, longitude: 77.209 },
+      Goa: { latitude: 15.2993, longitude: 74.124 },
+      Hyderabad: { latitude: 17.385, longitude: 78.4867 },
+      Jaipur: { latitude: 26.9124, longitude: 75.7873 },
+      Jaisalmer: { latitude: 26.9157, longitude: 70.9083 },
+      Jodhpur: { latitude: 26.2389, longitude: 73.0243 },
+      Kochi: { latitude: 9.9312, longitude: 76.2673 },
+      Kolkata: { latitude: 22.5726, longitude: 88.3639 },
+      Maldives: { latitude: 3.2028, longitude: 73.2207 }, // outside India
+    };
 
-          <!-- Quick Links -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
-              Quick Links
-            </h5>
-            <p>
-              <a href="#" class="text-white" style="text-decoration: none"
-                >Home</a
-              >
-            </p>
-            <p>
-              <a
-                href="AboutUs.html"
-                class="text-white"
-                style="text-decoration: none"
-                >About</a
-              >
-            </p>
-            <p>
-              <a href="VM.html" class="text-white" style="text-decoration: none"
-                >Services</a
-              >
-            </p>
-            <p>
-              <a href="#" class="text-white" style="text-decoration: none"
-                >Contact</a
-              >
-            </p>
-          </div>
+    // SVG path of Bootstrap icon "geo-alt-fill"
+    // Taken from https://icons.getbootstrap.com/icons/geo-alt-fill/
+    // Adjusted size and styling
+    const geoAltFillSVGPath =
+      "M12 0c-4.97 0-9 4.03-9 9 0 6.08 9 15 9 15s9-8.92 9-15c0-4.97-4.03-9-9-9zM12 12a3 3 0 1 1 0-6 3 3 0 0 1 0 6z";
 
-          <!-- Contact -->
-          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
-              Contact
-            </h5>
-            <p><i class="bi bi-house-door-fill me-2"></i> New Delhi, India</p>
-            <p><i class="bi bi-envelope-fill me-2"></i> contact@mysite.com</p>
-            <p><i class="bi bi-telephone-fill me-2"></i> +91 9876543210</p>
-          </div>
+    am5.ready(function () {
+      let root = am5.Root.new("indiaMap");
 
-          <!-- Social -->
-          <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
-            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
-              Follow us
-            </h5>
-            <a href="#" class="text-white me-4"
-              ><i class="bi bi-facebook"></i
-            ></a>
-            <a href="#" class="text-white me-4"
-              ><i class="bi bi-twitter"></i
-            ></a>
-            <a href="#" class="text-white me-4"
-              ><i class="bi bi-instagram"></i
-            ></a>
-            <a href="#" class="text-white me-4"
-              ><i class="bi bi-linkedin"></i
-            ></a>
-          </div>
-        </div>
+      root.setThemes([am5themes_Animated.new(root)]);
 
-        <hr class="mb-4" />
+      let chart = root.container.children.push(
+        am5map.MapChart.new(root, {
+          panX: "none",
+          panY: "none",
+          wheelY: "none",
+          projection: am5map.geoMercator(),
+        })
+      );
 
-        <!-- Bottom Line -->
-        <div class="row align-items-center">
-          <div class="col-md-7 col-lg-8">
-            <p class="text-white">© 2025 MySite. All Rights Reserved.</p>
-          </div>
-          <div class="col-md-5 col-lg-4">
-            <p class="text-white text-end">Designed by You</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <script>
-      // Coordinates (approximate)
-      const cityCoordinates = {
-        Agra: { latitude: 27.1767, longitude: 78.0081 },
-        Bengaluru: { latitude: 12.9716, longitude: 77.5946 },
-        Bhutan: { latitude: 27.5142, longitude: 90.4336 }, // outside India
-        Bikaner: { latitude: 28.0229, longitude: 73.3119 },
-        Bodhgaya: { latitude: 24.6961, longitude: 84.991 },
-        Chennai: { latitude: 13.0827, longitude: 80.2707 },
-        Delhi: { latitude: 28.6139, longitude: 77.209 },
-        Goa: { latitude: 15.2993, longitude: 74.124 },
-        Hyderabad: { latitude: 17.385, longitude: 78.4867 },
-        Jaipur: { latitude: 26.9124, longitude: 75.7873 },
-        Jaisalmer: { latitude: 26.9157, longitude: 70.9083 },
-        Jodhpur: { latitude: 26.2389, longitude: 73.0243 },
-        Kochi: { latitude: 9.9312, longitude: 76.2673 },
-        Kolkata: { latitude: 22.5726, longitude: 88.3639 },
-        Maldives: { latitude: 3.2028, longitude: 73.2207 }, // outside India
-      };
+      chart.series.push(
+        am5map.MapPolygonSeries.new(root, {
+          geoJSON: am5geodata_indiaLow,
+          fill: am5.color(0x808080),// saffron color
+          stroke: am5.color(0xffffff), // optional: white border
+          strokeWidth: 1,
+        })
+      );
 
-      // SVG path of Bootstrap icon "geo-alt-fill"
-      // Taken from https://icons.getbootstrap.com/icons/geo-alt-fill/
-      // Adjusted size and styling
-      const geoAltFillSVGPath =
-        "M12 0c-4.97 0-9 4.03-9 9 0 6.08 9 15 9 15s9-8.92 9-15c0-4.97-4.03-9-9-9zM12 12a3 3 0 1 1 0-6 3 3 0 0 1 0 6z";
+      let pointSeries = chart.series.push(
+        am5map.MapPointSeries.new(root, {
+          calculateAggregates: true,
+        })
+      );
 
-      am5.ready(function () {
-        let root = am5.Root.new("indiaMap");
-
-        root.setThemes([am5themes_Animated.new(root)]);
-
-        let chart = root.container.children.push(
-          am5map.MapChart.new(root, {
-            panX: "none",
-            panY: "none",
-            wheelY: "none",
-            projection: am5map.geoMercator(),
-          })
-        );
-
-        chart.series.push(
-          am5map.MapPolygonSeries.new(root, {
-            geoJSON: am5geodata_indiaLow,
-            fill: am5.color(0xff9933), // saffron color
-            stroke: am5.color(0xffffff), // optional: white border
-            strokeWidth: 1,
-          })
-        );
-
-        let pointSeries = chart.series.push(
-          am5map.MapPointSeries.new(root, {
-            calculateAggregates: true,
-          })
-        );
-
-        // Function to create custom geo-alt-fill marker using SVG path
-        function createGeoAltMarker(root) {
-          return am5.Graphics.new(root, {
-            svgPath: geoAltFillSVGPath,
-            fill: am5.color(0x0d6efd), // bootstrap blue
-            stroke: am5.color(0xffffff),
-            strokeWidth: 1.5,
-            scale: 1.5,
-            centerX: am5.p50,
-            centerY: am5.p100,
-            cursorOverStyle: "pointer",
-          });
-        }
-
-        function addMarker(city) {
-          pointSeries.data.setAll([]); // clear previous markers
-          const coords = cityCoordinates[city];
-          if (!coords) return;
-
-          pointSeries.data.push({
-            geometry: {
-              type: "Point",
-              coordinates: [coords.longitude, coords.latitude],
-            },
-            title: city,
-          });
-        }
-
-        // Custom bullet to replace default circle with geo-alt-fill icon
-        pointSeries.bullets.push(function () {
-          return am5.Bullet.new(root, {
-            sprite: createGeoAltMarker(root),
-            
-          });
+      // Function to create custom geo-alt-fill marker using SVG path
+      function createGeoAltMarker(root) {
+        return am5.Graphics.new(root, {
+          svgPath: geoAltFillSVGPath,
+          fill: am5.color(0x0d6efd), // bootstrap blue
+          stroke: am5.color(0xffffff),
+          strokeWidth: 1.5,
+          scale: 1.5,
+          centerX: am5.p50,
+          centerY: am5.p100,
+          cursorOverStyle: "pointer",
         });
+      }
 
-        // Initial marker on Delhi
-        addMarker("Delhi");
+      function addMarker(city) {
+        pointSeries.data.setAll([]); // clear previous markers
+        const coords = cityCoordinates[city];
+        if (!coords) return;
 
-        // Location list click logic
-        document.querySelectorAll(".location-item").forEach((el) => {
-          el.addEventListener("click", function () {
-            document
-              .querySelectorAll(".location-item")
-              .forEach((item) => item.classList.remove("active"));
-            this.classList.add("active");
+        pointSeries.data.push({
+          geometry: {
+            type: "Point",
+            coordinates: [coords.longitude, coords.latitude],
+          },
+          title: city,
+        });
+      }
 
-            const city = this.getAttribute("data-city");
-            addMarker(city);
-          });
+      // Custom bullet to replace default circle with geo-alt-fill icon
+      pointSeries.bullets.push(function () {
+        return am5.Bullet.new(root, {
+          sprite: createGeoAltMarker(root),
+
         });
       });
-    </script>
-  </body>
+
+      // Initial marker on Delhi
+      addMarker("Delhi");
+
+      // Location list click logic
+      document.querySelectorAll(".location-item").forEach((el) => {
+        el.addEventListener("click", function () {
+          document
+            .querySelectorAll(".location-item")
+            .forEach((item) => item.classList.remove("active"));
+          this.classList.add("active");
+
+          const city = this.getAttribute("data-city");
+          addMarker(city);
+        });
+      });
+    });
+  </script>
+  <script>
+    window.addEventListener("scroll", () => {
+      const navbar = document.querySelector(".navbar");
+      if (window.scrollY > 10) {
+        navbar.classList.add("navbar-scrolled");
+      } else {
+        navbar.classList.remove("navbar-scrolled");
+      }
+    });
+  </script>
+
+
+</body>
+
 </html>

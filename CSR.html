@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zenith Group Services - Corporate Social Responsibility</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+
+    :root {
+      --primary-color: #007bff;
+      --secondary-color: #6c757d;
+      --accent-color: #28a745;
+      --success-color: #17a2b8;
+      --warning-color: #ffc107;
+      --dark-bg: #04293a;
+      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --card-hover-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    body {
+      background-color: #f8f9fa;
+      min-height: 100vh;
+    }
+
+    .navbar-custom {
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-scrolled {
+      background: rgba(26, 26, 46, 0.95) !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-color) !important;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: #333 !important;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 50%;
+      background: var(--primary-color);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .navbar-scrolled .nav-link {
+      color: white !important;
+    }
+
+    .hero-section {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 120px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.1)"><polygon points="0,0 1000,100 1000,0"/></svg>');
+      background-size: cover;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+    }
+
+    .csr-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
+      border: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .csr-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background-color: var(--primary-color);
+    }
+
+    .csr-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--card-hover-shadow);
+    }
+
+    .csr-card:nth-child(2n)::before {
+      background-color: var(--secondary-color);
+    }
+
+    .csr-card:nth-child(3n)::before {
+      background-color: var(--accent-color);
+    }
+
+    .csr-card:nth-child(4n)::before {
+      background-color: var(--success-color);
+    }
+
+    .csr-card:nth-child(5n)::before {
+      background-color: var(--warning-color);
+    }
+
+    .csr-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+      margin-bottom: 1.5rem;
+      background-color: var(--primary-color);
+    }
+
+    .csr-card:nth-child(2n) .csr-icon {
+      background-color: var(--secondary-color);
+    }
+
+    .csr-card:nth-child(3n) .csr-icon {
+      background-color: var(--accent-color);
+    }
+
+    .csr-card:nth-child(4n) .csr-icon {
+      background-color: var(--success-color);
+    }
+
+    .csr-card:nth-child(5n) .csr-icon {
+      background-color: var(--warning-color);
+    }
+
+    .csr-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .csr-description {
+      color: #666;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    .stats-section {
+      background: var(--dark-bg);
+      color: white;
+      padding: 80px 0;
+      margin: 80px 0;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--success-color);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      margin-top: 0.5rem;
+    }
+
+    .footer-custom {
+      background: var(--dark-bg);
+      color: white;
+      padding: 60px 0 20px;
+    }
+
+    .footer-title {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--success-color);
+    }
+
+    .footer-link {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: block;
+      padding: 0.3rem 0;
+    }
+
+    .footer-link:hover {
+      color: white;
+      padding-left: 10px;
+    }
+
+    .social-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.1);
+      margin: 0 0.5rem;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-3px);
+      color: white;
+    }
+
+    .social-icon.facebook:hover {
+      background: #3b5998;
+    }
+
+    .social-icon.twitter:hover {
+      background: #1da1f2;
+    }
+
+    .social-icon.instagram:hover {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    }
+
+    .social-icon.linkedin:hover {
+      background: #0077b5;
+    }
+
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .hero-section {
+        padding: 100px 0 60px;
+      }
+      
+      .csr-card {
+        margin-bottom: 1.5rem;
+      }
+      
+      .stat-number {
+        font-size: 2rem;
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Zenith Hospitality</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Services</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="./location.html">Locations</a></li>
+              <li><a class="dropdown-item" href="./">CSR</a></li>
+              <li><a class="dropdown-item" href="./verticals.html">Our Verticals</a></li>
+              <li><a class="dropdown-item" href="./awards.html">Awards & Accolades</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="./aboutUs.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="./ContactUS.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-content">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h1 class="section-title fade-in">Corporate Social Responsibility</h1>
+          <p class="section-subtitle fade-in">Committed to creating positive impact through sustainable practices, community empowerment, and environmental stewardship.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-6">
+          <div class="stat-item fade-in">
+            <span class="stat-number" data-count="150">0</span>
+            <div class="stat-label">Communities Served</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stat-item fade-in">
+            <span class="stat-number" data-count="50000">0</span>
+            <div class="stat-label">Lives Impacted</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stat-item fade-in">
+            <span class="stat-number" data-count="25">0</span>
+            <div class="stat-label">Years of Service</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stat-item fade-in">
+            <span class="stat-number" data-count="100">0</span>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CSR Initiatives -->
+  <div class="container" style="margin: 80px auto;">
+    <div class="row">
+      <!-- 3P Structure -->
+      <div class="col-lg-6 col-md-6 mb-4">
+        <div class="csr-card fade-in">
+          <div class="csr-icon">
+            <i class="bi bi-diagram-3"></i>
+          </div>
+          <h3 class="csr-title">3P Structure</h3>
+          <p class="csr-description">
+            We understand and embody the concept of the 3P structure: People, Planet, and Profit. We aim to integrate Triple Bottom Line accounting into our framework to ensure a beneficial impact on social, environmental, and financial aspects.
+          </p>
+        </div>
+      </div>
+
+      <!-- Environmental Welfare -->
+      <div class="col-lg-6 col-md-6 mb-4">
+        <div class="csr-card fade-in">
+          <div class="csr-icon">
+            <i class="bi bi-tree"></i>
+          </div>
+          <h3 class="csr-title">Environmental Welfare</h3>
+          <p class="csr-description">
+            We are committed to minimizing the environmental impact of tourism through careful resource selection, local collaboration, and sustainable practices across all operations.
+          </p>
+        </div>
+      </div>
+
+      <!-- CSR Activities -->
+      <div class="col-lg-6 col-md-6 mb-4">
+        <div class="csr-card fade-in">
+          <div class="csr-icon">
+            <i class="bi bi-heart"></i>
+          </div>
+          <h3 class="csr-title">CSR Activities</h3>
+          <p class="csr-description">
+            Our corporate social responsibility initiatives focus on community development, education, and healthcare to uplift the lives of the underprivileged.
+          </p>
+        </div>
+      </div>
+
+      <!-- Education Support -->
+      <div class="col-lg-6 col-md-6 mb-4">
+        <div class="csr-card fade-in">
+          <div class="csr-icon">
+            <i class="bi bi-book"></i>
+          </div>
+          <h3 class="csr-title">Education Support</h3>
+          <p class="csr-description">
+            We support schools with infrastructure and educational materials, ensuring better access to learning for children in rural and underserved areas.
+          </p>
+        </div>
+      </div>
+
+      <!-- Health & Hygiene -->
+      <div class="col-lg-6 col-md-6 mb-4">
+        <div class="csr-card fade-in">
+          <div class="csr-icon">
+            <i class="bi bi-shield-plus"></i>
+          </div>
+          <h3 class="csr-title">Health & Hygiene</h3>
+          <p class="csr-description">
+            Through health camps, clean water initiatives, and sanitation drives, we help build healthier communities in our focus regions.
+          </p>
+        </div>
+      </div>
+
+      <!-- Community Empowerment -->
+      <div class="col-lg-6 col-md-6 mb-4">
+        <div class="csr-card fade-in">
+          <div class="csr-icon">
+            <i class="bi bi-people"></i>
+          </div>
+          <h3 class="csr-title">Community Empowerment</h3>
+          <p class="csr-description">
+            We provide skill training and employment opportunities to local populations to encourage self-reliance and sustainable development.
+          </p>
+        </div>
+      </div>
+
+      <!-- Animal Welfare -->
+      <div class="col-lg-6 col-md-6 mb-4">
+        <div class="csr-card fade-in">
+          <div class="csr-icon">
+            <i class="bi bi-bug"></i>
+          </div>
+          <h3 class="csr-title">Animal Welfare</h3>
+          <p class="csr-description">
+            Our animal welfare initiatives focus on protecting wildlife, promoting cruelty-free tourism, and supporting NGOs dedicated to animal care.
+          </p>
+        </div>
+      </div>
+
+      <!-- Cultural Preservation -->
+      <div class="col-lg-6 col-md-6 mb-4">
+        <div class="csr-card fade-in">
+          <div class="csr-icon">
+            <i class="bi bi-palette"></i>
+          </div>
+          <h3 class="csr-title">Cultural Preservation</h3>
+          <p class="csr-description">
+            We actively support local art, craft, music, and traditions to preserve the rich cultural heritage of our destinations.
+          </p>
+        </div>
+      </div>
+
+      <!-- Rural Tourism -->
+      <div class="col-lg-6 col-md-6 mb-4">
+        <div class="csr-card fade-in">
+          <div class="csr-icon">
+            <i class="bi bi-house"></i>
+          </div>
+          <h3 class="csr-title">Rural Tourism</h3>
+          <p class="csr-description">
+            By promoting village-based tourism, we create livelihood opportunities while offering tourists authentic and immersive cultural experiences.
+          </p>
+        </div>
+      </div>
+
+      <!-- Empowering Women -->
+      <div class="col-lg-6 col-md-6 mb-4">
+        <div class="csr-card fade-in">
+          <div class="csr-icon">
+            <i class="bi bi-person-plus"></i>
+          </div>
+          <h3 class="csr-title">Empowering Women</h3>
+          <p class="csr-description">
+            Through dedicated programs, we help women become financially independent by supporting self-help groups and entrepreneurship training.
+          </p>
+        </div>
+      </div>
+
+      <!-- Global Partnerships -->
+      <div class="col-lg-6 col-md-6 mb-4">
+        <div class="csr-card fade-in">
+          <div class="csr-icon">
+            <i class="bi bi-globe"></i>
+          </div>
+          <h3 class="csr-title">Global Partnerships</h3>
+          <p class="csr-description">
+            We collaborate with international bodies to align our CSR goals with global sustainability standards.
+          </p>
+        </div>
+      </div>
+
+      <!-- Green Tourism -->
+      <div class="col-lg-6 col-md-6 mb-4">
+        <div class="csr-card fade-in">
+          <div class="csr-icon">
+            <i class="bi bi-leaf"></i>
+          </div>
+          <h3 class="csr-title">Green Tourism</h3>
+          <p class="csr-description">
+            We advocate for eco-friendly travel options and green infrastructure at all tourism sites we engage with.
+          </p>
+        </div>
+      </div>
+
+      <!-- Sustainable Practices -->
+      <div class="col-lg-12 col-md-12 mb-4">
+        <div class="csr-card fade-in">
+          <div class="csr-icon">
+            <i class="bi bi-recycle"></i>
+          </div>
+          <h3 class="csr-title">Sustainable Practices</h3>
+          <p class="csr-description">
+            Sustainability is at the core of our operations. We ensure that every aspect of our business aligns with reducing carbon footprints and conserving natural resources for future generations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-12 mb-4">
+          <h5 class="footer-title">Zenith Hospitality</h5>
+          <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.6;">
+            Committed to sustainable tourism and creating positive impact in communities worldwide through responsible business practices and social initiatives.
+          </p>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <h5 class="footer-title">Quick Links</h5>
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="location.html" class="footer-link">Locations</a>
+          <a href="csr.html" class="footer-link">CSR</a>
+          <a href="verticals.html" class="footer-link">Our Verticals</a>
+          <a href="awards.html" class="footer-link">Awards & Accolades</a>
+          <a href="aboutUs.html" class="footer-link">About Us</a>
+          <a href="contactUS.html" class="footer-link">Contact Us</a>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <h5 class="footer-title">Follow Us</h5>
+          <div class="d-flex justify-content-start align-items-center mt-3">
+            <a href="#" class="social-icon facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="#" class="social-icon twitter">
+              <i class="bi bi-twitter"></i>
+            </a>
+            <a href="#" class="social-icon instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="#" class="social-icon linkedin">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <hr style="border-color: rgba(255, 255, 255, 0.2); margin: 2rem 0 1rem;">
+      
+      <div class="text-center" style="color: rgba(255, 255, 255, 0.6);">
+        © 2025 Zenith Hospitality. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.querySelector(".navbar");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add("navbar-scrolled");
+      } else {
+        navbar.classList.remove("navbar-scrolled");
+      }
+    });
+
+    // Fade in animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Counter animation
+    function animateCounters() {
+      const counters = document.querySelectorAll('[data-count]');
+      
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-count'));
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+        
+        const updateCounter = () => {
+          current += increment;
+          if (current < target) {
+            counter.textContent = Math.floor(current).toLocaleString();
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = target.toLocaleString();
+          }
+        };
+        
+        // Start animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              updateCounter();
+              statsObserver.unobserve(entry.target);
+            }
+          });
+        });
+        
+        statsObserver.observe(counter.closest('.stat-item'));
+      });
+    }
+
+    // Initialize counter animation
+    animateCounters();
+  </script>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
