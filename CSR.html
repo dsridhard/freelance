@@ -78,7 +78,7 @@
     }
 
     .hero-section {
-      background-color: var(--primary-color);
+      background-image: url('https://plus.unsplash.com/premium_photo-1679429320956-f6171b6f006b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
       color: white;
       padding: 120px 0 80px;
       position: relative;
@@ -202,10 +202,10 @@
     }
 
     .stats-section {
-      background: var(--dark-bg);
+   background-color: rgba(33, 37, 41, 1);
       color: white;
       padding: 80px 0;
-      margin: 80px 0;
+      
     }
 
     .stat-item {
@@ -216,7 +216,7 @@
     .stat-number {
       font-size: 3rem;
       font-weight: 700;
-      color: var(--success-color);
+      color: white;
       display: block;
     }
 
@@ -315,6 +315,15 @@
       opacity: 1;
       transform: translateY(0);
     }
+     .navbar-nav .nav-item {
+      margin-right: 2.3rem;
+    }
+     .navbar-nav .dropdown:hover .dropdown-menu {
+      display: block;
+      margin-top: 0;
+      /* prevent gap */
+    }
+
   </style>
 </head>
 
@@ -566,50 +575,71 @@
   </div>
 
   <!-- Footer -->
-  <footer class="footer-custom">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 col-md-12 mb-4">
-          <h5 class="footer-title">Zenith Hospitality</h5>
-          <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.6;">
-            Committed to sustainable tourism and creating positive impact in communities worldwide through responsible business practices and social initiatives.
+  <footer class="bg-dark text-white pt-5 pb-4 mt-5">
+    <div class="container text-md-left">
+      <div class="row text-md-left">
+        <!-- About -->
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+            MySite
+          </h5>
+          <p>
+            MySite is your go-to platform for amazing content and services. We
+            bring you the best design, experience, and performance.
           </p>
         </div>
 
-        <div class="col-lg-4 col-md-6 mb-4">
-          <h5 class="footer-title">Quick Links</h5>
-          <a href="index.html" class="footer-link">Home</a>
-          <a href="location.html" class="footer-link">Locations</a>
-          <a href="csr.html" class="footer-link">CSR</a>
-          <a href="verticals.html" class="footer-link">Our Verticals</a>
-          <a href="awards.html" class="footer-link">Awards & Accolades</a>
-          <a href="aboutUs.html" class="footer-link">About Us</a>
-          <a href="contactUS.html" class="footer-link">Contact Us</a>
+        <!-- Quick Links -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+            Quick Links
+          </h5>
+          <p>
+            <a href="#" class="text-white" style="text-decoration: none">Home</a>
+          </p>
+          <p>
+            <a href="AboutUs.html" class="text-white" style="text-decoration: none">About</a>
+          </p>
+          <p>
+            <a href="VM.html" class="text-white" style="text-decoration: none">Services</a>
+          </p>
+          <p>
+            <a href="#" class="text-white" style="text-decoration: none">Contact</a>
+          </p>
         </div>
 
-        <div class="col-lg-4 col-md-6 mb-4">
-          <h5 class="footer-title">Follow Us</h5>
-          <div class="d-flex justify-content-start align-items-center mt-3">
-            <a href="#" class="social-icon facebook">
-              <i class="bi bi-facebook"></i>
-            </a>
-            <a href="#" class="social-icon twitter">
-              <i class="bi bi-twitter"></i>
-            </a>
-            <a href="#" class="social-icon instagram">
-              <i class="bi bi-instagram"></i>
-            </a>
-            <a href="#" class="social-icon linkedin">
-              <i class="bi bi-linkedin"></i>
-            </a>
-          </div>
+        <!-- Contact -->
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+            Contact
+          </h5>
+          <p><i class="bi bi-house-door-fill me-2"></i> New Delhi, India</p>
+          <p><i class="bi bi-envelope-fill me-2"></i> contact@mysite.com</p>
+          <p><i class="bi bi-telephone-fill me-2"></i> +91 9876543210</p>
+        </div>
+
+        <!-- Social -->
+        <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+            Follow us
+          </h5>
+          <a href="#" class="text-white me-4"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white me-4"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="text-white me-4"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-white me-4"><i class="bi bi-linkedin"></i></a>
         </div>
       </div>
-      
-      <hr style="border-color: rgba(255, 255, 255, 0.2); margin: 2rem 0 1rem;">
-      
-      <div class="text-center" style="color: rgba(255, 255, 255, 0.6);">
-        © 2025 Zenith Hospitality. All rights reserved.
+
+      <hr class="mb-4" />
+
+      <!-- Bottom Line -->
+      <div class="row align-items-center">
+        <div class="col-md-7 col-lg-8">
+          <p class="text-white">© 2025 MySite. All Rights Reserved.</p>
+        </div>
+        <div class="col-md-5 col-lg-4">
+          <p class="text-white text-end">Designed by You</p>
+        </div>
       </div>
     </div>
   </footer>
