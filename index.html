@@ -364,8 +364,19 @@
       background-color: #222;
       /* optional for contrast */
     }
-    .dropdown-menu{
+
+    .dropdown-menu {
       padding: 10px 12px 10px 14px;
+    }
+
+    .carousel-caption,
+    .carousel-caption h3,
+    .carousel-caption p,
+    .carousel-caption span {
+      color: white !important;
+      /* position: relative; */
+      /* to be above overlay */
+      z-index: 2;
     }
   </style>
 </head>
@@ -410,10 +421,9 @@
       <div class="carousel-item active">
         <img src="./assets/images/img1.jpg" class="d-block w-100" alt="Image 1" />
         <div class="carousel-caption">
-          <h3>Welcome to <span id="slide1-keyword">Slide 1</span></h3>
-          <p>
-            This is the <span id="slide1-desc">center text</span> for image 1.
-          </p>
+          <h3 class="text-white">Welcome to <span class="slide-keyword">Slide 1</span></h3>
+          <p>This is the <span class="slide-desc">center text</span> for image 1.</p>
+
         </div>
       </div>
       <div class="carousel-item">
@@ -435,10 +445,20 @@
         </div>
       </div>
     </div>
+    <div style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.65);
+          z-index: 1;
+        "></div>
+
   </div>
 
   <!-- Placeholder Content -->
-  <div class="position-relative text-center text-white" style="height: 100vh; overflow: hidden">
+  <div class="position-relative text-center text-white mt-5" style="height: 100vh; overflow: hidden">
     <!-- Fullscreen Image -->
     <img src="./assets/images/img2.jpg" class="position-absolute top-0 start-0 w-100 h-100"
       style="object-fit: cover; z-index: 0" alt="Background Image" />
