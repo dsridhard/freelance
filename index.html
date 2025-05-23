@@ -367,21 +367,9 @@
       margin-right: 2.3rem;
     }
 
-    .navbar .nav-link:hover,
-    .navbar .dropdown-toggle:hover {
-      color: #d49605 !important;
-      /* Use any highlight color */
-      text-decoration: none;
-      /* Optional */
-      transition: color 0.3s ease;
-      /* Smooth transition */
-    }
+  
 
-    .navbar .dropdown-item:hover {
-      color: #f9c74f !important;
-      background-color: #222;
-      /* optional for contrast */
-    }
+   
 
     .dropdown-menu {
       padding: 10px 12px 10px 14px;
@@ -395,6 +383,30 @@
       /* position: relative; */
       /* to be above overlay */
       z-index: 2;
+    }
+
+    .nav-link {
+      position: relative;
+      /* Required for ::after absolute positioning */
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      background: #007bff;
+      transition: width 0.3s ease, left 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+      left: 50%;
     }
   </style>
 </head>
@@ -656,9 +668,9 @@
           industry. My growth, when I got Booker, doubled!"
         </p>
       </div>
-      <div class="video-player">
-        <video autoplay loop src="./assets/images/SampleVideo_1280x720_1mb.mp4" type="video/mp4"
-          alt="Video Thumbnail" />
+      <div class="video-player w-50">
+        <video width="500px" autoplay loop src="./assets/images/SampleVideo_1280x720_1mb.mp4" type="video/mp4"
+          alt="Video Thumbnail">
       </div>
     </div>
 
