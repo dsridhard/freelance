@@ -94,6 +94,10 @@
      .navbar-nav .nav-item {
       margin-right: 2.3rem;
     }
+    .navbar-brand {
+        color: white !important;
+      }
+
     /* Custom marker SVG style */
     .custom-marker {
       pointer-events: auto;
@@ -181,19 +185,13 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">Services</a>
-            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-              <li><a class="dropdown-item" href="./location.html">Locations</a></li>
-              <li><a class="dropdown-item" href="./CSR.html">CSR</a></li>
-              <li><a class="dropdown-item" href="./verticals.html">Our Verticals</a></li>
-              <li><a class="dropdown-item" href="./awards.html">Awards & Accolades</a></li>
-            </ul>
-          </li>
           <li class="nav-item"><a class="nav-link" href="./aboutUs.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="./ContactUS.html">Contact Us</a></li>
-        </ul>
+          <li class="nav-item"><a class="nav-link" href="./verticals.html">Our Verticals</a></li>
+          <li class="nav-item"><a class="nav-link" href="./Awards.html">Awards & Accolades</a></li>
+          <li class="nav-item"><a class="nav-link" href="./location.html">Locations</a></li>
+       <li class="nav-item"><a class="nav-link" href="./ContactUS.html">Contact Us</a></li>
+       <li class="nav-item"><a class="nav-link" href="./CSR.html">CSR</a></li>
+       </ul>
       </div>
     </div>
   </nav>
@@ -259,74 +257,59 @@
 
   </div>
   </div>
-  <footer class="bg-dark text-white pt-5 pb-4 mt-5">
-    <div class="container text-md-left">
-      <div class="row text-md-left">
-        <!-- About -->
-        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
-            MySite
-          </h5>
-          <p>
-            MySite is your go-to platform for amazing content and services. We
-            bring you the best design, experience, and performance.
-          </p>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
-            Quick Links
-          </h5>
-          <p>
-            <a href="#" class="text-white" style="text-decoration: none">Home</a>
-          </p>
-          <p>
-            <a href="AboutUs.html" class="text-white" style="text-decoration: none">About</a>
-          </p>
-          <p>
-            <a href="VM.html" class="text-white" style="text-decoration: none">Services</a>
-          </p>
-          <p>
-            <a href="#" class="text-white" style="text-decoration: none">Contact</a>
-          </p>
-        </div>
-
-        <!-- Contact -->
-        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
-            Contact
-          </h5>
-          <p><i class="bi bi-house-door-fill me-2"></i> New Delhi, India</p>
-          <p><i class="bi bi-envelope-fill me-2"></i> contact@mysite.com</p>
-          <p><i class="bi bi-telephone-fill me-2"></i> +91 9876543210</p>
-        </div>
-
-        <!-- Social -->
-        <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
-            Follow us
-          </h5>
-          <a href="#" class="text-white me-4"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="text-white me-4"><i class="bi bi-twitter"></i></a>
-          <a href="#" class="text-white me-4"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="text-white me-4"><i class="bi bi-linkedin"></i></a>
-        </div>
+ <footer class="bg-dark text-white pt-5 pb-4 mt-5">
+  <div class="container text-md-left">
+    <div class="row text-md-left">
+      <!-- About -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">MySite</h5>
+        <p>
+          MySite is your go-to platform for amazing content and services.
+          We bring you the best design, experience, and performance.
+        </p>
       </div>
 
-      <hr class="mb-4" />
+      <!-- Quick Links -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Quick Links</h5>
+        <p><a href="#" class="text-white" style="text-decoration: none">Home</a></p>
+        <p><a href="AboutUs.html" class="text-white" style="text-decoration: none">About</a></p>
+        <p><a href="VM.html" class="text-white" style="text-decoration: none">Services</a></p>
+        <p><a href="#" class="text-white" style="text-decoration: none">Contact</a></p>
+      </div>
 
-      <!-- Bottom Line -->
-      <div class="row align-items-center">
-        <div class="col-md-7 col-lg-8">
-          <p class="text-white">© 2025 MySite. All Rights Reserved.</p>
-        </div>
-        <div class="col-md-5 col-lg-4">
-          <p class="text-white text-end">Designed by You</p>
-        </div>
+      <!-- Contact -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
+        <p><i class="bi bi-house-door-fill me-2"></i> New Delhi, India</p>
+        <p><i class="bi bi-envelope-fill me-2"></i> contact@mysite.com</p>
+        <p><i class="bi bi-telephone-fill me-2"></i> +91 9876543210</p>
+      </div>
+
+      <!-- Social -->
+      <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Follow us</h5>
+        <a href="#" class="text-white me-4"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white me-4"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-white me-4"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="text-white me-4"><i class="bi bi-linkedin"></i></a>
       </div>
     </div>
-  </footer>
+
+    <hr class="mb-4" />
+
+    <!-- Bottom Line -->
+    <div class="row align-items-center">
+      <div class="col-md-7 col-lg-8">
+        <p class="text-white">© 2025 MySite. All Rights Reserved.</p>
+      </div>
+      <div class="col-md-5 col-lg-4">
+        <p class="text-white text-end">Designed by You</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
   <script>
     // Coordinates (approximate)
     const cityCoordinates = {
