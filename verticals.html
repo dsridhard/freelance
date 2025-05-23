@@ -1,203 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Zenith Hospitality - Our Verticals</title>
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap Icons CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <style>
-      .section {
-        padding: 4rem 0;
-        border-top: 1px solid #e9ecef;
-      }
 
-      .section:first-child {
-        border-top: none;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zenith Hospitality - Our Verticals</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  
+  <style>
+    .section {
+      padding: 4rem 0;
+      border-top: 1px solid #e9ecef;
+    }
 
-      .section img {
-        max-height: 300px;
-        object-fit: cover;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      }
+    .section:first-child {
+      border-top: none;
+    }
 
-      .navbar-custom {
-        transition: all 0.3s ease;
-      }
-      
-      .navbar-transparent {
-        background-color: rgba(0,0, 0, 0.1) !important;
-        backdrop-filter: blur(10px);
-      }
+    .section img {
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
 
-      .navbar-scrolled {
-        background-color: rgba(0, 0, 0, 0.9) !important;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-      }
+    .navbar-custom {
+      transition: all 0.3s ease;
+    }
 
-      /* Default navbar text (when transparent/not scrolled) */
-      .navbar-nav .nav-link {
-        color: #fdfdfd !important;
-        transition: color 0.3s;
-        font-weight: 500;
-      }
+    .navbar-transparent {
+      background-color: rgba(0, 0, 0, 0.1) !important;
+      backdrop-filter: blur(10px);
+    }
 
-      .navbar-brand {
-        color: #ffffff !important;
-        font-weight: bold;
-        transition: color 0.3s;
-      }
+    .navbar-scrolled {
+      background-color: rgba(0, 0, 0, 0.9) !important;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    }
 
-      .navbar-toggler {
-        border-color: #333;
-      }
+    /* Default navbar text (when transparent/not scrolled) */
+    .navbar-nav .nav-link {
+      color: #fdfdfd !important;
+      transition: color 0.3s;
+      font-weight: 500;
+    }
 
-      .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-      }
+    .navbar-brand {
+      color: #ffffff !important;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
 
-      /* Scrolled navbar text (white on dark background) */
-      .navbar-scrolled .nav-link {
-        color: white !important;
-      }
+    .navbar-toggler {
+      border-color: #333;
+    }
 
-      .navbar-scrolled .navbar-brand {
-        color: white !important;
-      }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
 
-      .navbar-scrolled .navbar-toggler {
-        border-color: white;
-      }
+    /* Scrolled navbar text (white on dark background) */
+    .navbar-scrolled .nav-link {
+      color: white !important;
+    }
 
-      .navbar-scrolled .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-      }
+    .navbar-scrolled .navbar-brand {
+      color: white !important;
+    }
 
-      .text-primary {
-        color: #007bff !important;
-      }
+    .navbar-scrolled .navbar-toggler {
+      border-color: white;
+    }
 
-      /* Hover effects */
-      
+    .navbar-scrolled .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    .text-primary {
+      color: #007bff !important;
+    }
+
+    /* Hover effects */
 
 
-      
 
-      .navbar-scrolled .dropdown-item {
-        color: #333 !important;
-      }
 
-      .navbar-scrolled .dropdown-item:hover {
-      
-        background-color: #222;
-      }
 
-      .dropdown-menu {
-        padding: 10px 12px 10px 14px;
-        background-color: white;
-        border: 1px solid rgba(0, 0, 0, 0.15);
-      }
+    .navbar-scrolled .dropdown-item {
+      color: #333 !important;
+    }
 
-      .navbar-scrolled .dropdown-menu {
-        background-color: rgba(255, 255, 255, 0.95);
-      }
+    .navbar-scrolled .dropdown-item:hover {
 
-      .hero-section {
-        position: relative;
-        background-image: url("assets/images/pexels-fotios-photos-1137745.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        color: rgb(209, 21, 21);
-        padding: 150px 0 250px;
-        text-align: center;
-        z-index: 1;
-      }
+      background-color: #222;
+    }
 
-      .hero-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent gray */
-        z-index: -1;
-      }
+    .dropdown-menu {
+      padding: 10px 12px 10px 14px;
+      background-color: white;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+    }
 
-      .hero-section h1 {
-        font-size: 3.5rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-      }
+    .navbar-scrolled .dropdown-menu {
+      background-color: rgba(255, 255, 255, 0.95);
+    }
 
-      .hero-section p {
-        font-size: 1.25rem;
-        opacity: 0.9;
-      }
+    .hero-section {
+      position: relative;
+      background-image: url("assets/images/pexels-fotios-photos-1137745.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: rgb(209, 21, 21);
+      padding: 150px 0 250px;
+      text-align: center;
+      z-index: 1;
+    }
 
-      .vertical-number {
-        background: linear-gradient(135deg, #007bff, #0056b3);
-        color: white;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-      }
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      /* Semi-transparent gray */
+      z-index: -1;
+    }
 
-      .feature-list {
-        list-style: none;
-        padding: 0;
-      }
+    .hero-section h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
 
-      .feature-list li {
-        padding: 0.5rem 0;
-        position: relative;
-        padding-left: 1.5rem;
-      }
+    .hero-section p {
+      font-size: 1.25rem;
+      opacity: 0.9;
+    }
 
-      .feature-list li:before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: #28a745;
-        font-weight: bold;
-      }
+    .vertical-number {
+      background: linear-gradient(135deg, #007bff, #0056b3);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
 
-      .section h3 {
-        font-weight: 600;
-        margin-bottom: 1.5rem;
-      }
+    .feature-list {
+      list-style: none;
+      padding: 0;
+    }
 
-      .section p {
-        color: #6c757d;
-        line-height: 1.7;
-        margin-bottom: 1.5rem;
-      }
-      .navbar-nav .dropdown:hover .dropdown-menu {
-        display: block;
-        margin-top: 0;
-        /* prevent gap */
-      }
-      .navbar-nav .nav-item {
-        margin-right: 2.3rem;
-      }
-       .nav-link {
+    .feature-list li {
+      padding: 0.5rem 0;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .feature-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #28a745;
+      font-weight: bold;
+    }
+
+    .section h3 {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .section p {
+      color: #6c757d;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .navbar-nav .dropdown:hover .dropdown-menu {
+      display: block;
+      margin-top: 0;
+      /* prevent gap */
+    }
+
+    .navbar-nav .nav-item {
+      margin-right: 2.3rem;
+    }
+
+    .nav-link {
       position: relative;
       /* Required for ::after absolute positioning */
       display: inline-block;
@@ -220,572 +220,491 @@
       width: 100%;
       left: 50%;
     }
-    </style>
-  </head>
+  </style>
+</head>
 
-  <body class="bg-light">
-    <nav
-      class="navbar navbar-expand-lg navbar-custom fixed-top navbar-transparent"
-    >
-      <div class="container">
-        <a class="navbar-brand" href="#">Zenith Hospitality</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top navbar-transparent">
+    <div class="container">
+      <a class="navbar-brand" href="#">Zenith Hospitality</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <!-- Centered navbar links -->
-        <div
-          class="collapse navbar-collapse justify-content-center"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="./index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./aboutUs.html">AboutUs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./verticals.html">Our Verticals</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./Awards.html">Awards & Accolades</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./location.html">Locations</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./ContactUS.html">ContactUs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./CSR.html">CSR</a>
-            </li>
-          </ul>
-        </div>
+      <!-- Centered navbar links -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./aboutUs.html">AboutUs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./verticals.html">Our Verticals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./Awards.html">Awards & Accolades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./location.html">Locations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./ContactUS.html">ContactUs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./CSR.html">CSR</a>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- Hero Section -->
-    <div class="hero-section">
-      <div class="container">
-        <h1>Our <span class="text-white">Verticals</span></h1>
-        <p class="text-white">
-          Comprehensive travel and hospitality solutions across multiple
-          specialized domains
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="container">
+      <h1>Our <span class="text-white">Verticals</span></h1>
+      <p class="text-white">
+        Comprehensive travel and hospitality solutions across multiple
+        specialized domains
+      </p>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top: 80px">
+    <!-- 1. Holidays -->
+    <div class="row align-items-center section">
+      <div class="col-md-8">
+        <div class="vertical-number">1</div>
+        <h3 class="text-primary">Holidays</h3>
+        <p>
+          Zenith Holidays, a vertical of the Zenith Hospitality, specializes
+          in creating memorable travel experiences. From group tours to
+          customized tours, the company offers well-curated holiday packages
+          for a wide range of destinations.
+        </p>
+        <ul class="feature-list">
+          <li>Expert in group and customized tours</li>
+          <li>Wide range of domestic and international packages</li>
+          <li>Flights, hotels, VISA, sightseeing, and transfers</li>
+          <li>Focus on seamless and hassle-free travel</li>
+          <li>Value-for-money and high-quality services</li>
+          <li>Committed to customer satisfaction</li>
+          <li>Helping travellers explore the world with ease</li>
+        </ul>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="./assets/images/pexels-pixabay-38238.jpg" class="img-fluid" alt="Holiday Travel" />
+      </div>
+    </div>
+
+    <!-- 2. Hotels -->
+    <div class="row align-items-center section">
+      <div class="col-md-4 text-center">
+        <img src="./assets/images/pexels-asman-chema-91897-594077.jpg" class="img-fluid" alt="Luxury Hotel" />
+      </div>
+      <div class="col-md-8">
+        <div class="vertical-number">2</div>
+        <h3 class="text-primary">Hotels</h3>
+        <p>
+          Finding your ideal accommodation should be effortless—that's why
+          Zenith Hotels brings you a handpicked selection of stays across the
+          globe. We partner with trusted hotels, resorts, and boutique
+          properties to guarantee comfort, quality, and exceptional service
+          wherever you travel.
+        </p>
+        <ul class="feature-list">
+          <li>Wide range of global stays</li>
+          <li>From budget rooms to luxury retreats</li>
+          <li>Partnerships with top-rated properties</li>
+          <li>Guaranteed comfort and quality service</li>
+          <li>Exclusive offers and best deals</li>
+          <li>Flexible cancellation options</li>
+          <li>24/7 customer support for peace of mind</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3. Flight -->
+    <div class="row align-items-center section">
+      <div class="col-md-8">
+        <div class="vertical-number">3</div>
+        <h3 class="text-primary">Flight</h3>
+        <p>
+          At Zenith Flights, we take the stress out of air travel by offering
+          seamless booking, unbeatable prices, and ultimate flexibility. Our
+          smart search technology scans thousands of options to find you the
+          best flights, routes, and schedules—all at competitive rates.
+        </p>
+        <ul class="feature-list">
+          <li>Hassle-free booking with best fares</li>
+          <li>Easy modifications and real-time updates</li>
+          <li>24/7 support for smooth travel</li>
+          <li>Multi-city and flexible travel options</li>
+          <li>Exclusive deals and loyalty rewards</li>
+          <li>Smart tech for perfect flight matches</li>
+          <li>Convenient and affordable air travel</li>
+        </ul>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="./assets//images/pexels-pixabay-104826.jpg" class="img-fluid" alt="Aircraft Flight" />
+      </div>
+    </div>
+
+    <!-- 4. MICE -->
+    <div class="row align-items-center section">
+      <div class="col-md-4 text-center">
+        <img src="./assets/images/pexels-sokmeas-uy-113943-28314377.jpg" class="img-fluid" alt="Business Conference" />
+      </div>
+      <div class="col-md-8">
+        <div class="vertical-number">4</div>
+        <h3 class="text-primary">MICE</h3>
+        <p>
+          MICE (Meetings, Incentives, Conferences, and Exhibitions) is a
+          specialized area of business tourism. It focuses on creating unique
+          programs and activities for corporate organizations, typically
+          involving conferences, business meetings, exhibitions, or fairs.
+        </p>
+        <ul class="feature-list">
+          <li>Flagship service and core strength of Zenith</li>
+          <li>
+            Complete planning with customized itineraries and familiarization
+            trips
+          </li>
+          <li>Flight bookings and visa assistance for smooth travel</li>
+          <li>Premium accommodations with curated meals and catering</li>
+          <li>Foreign exchange, travel insurance, and phone card support</li>
+          <li>Transfers, technical setup, and on-ground coordination</li>
+          <li>Post-event tours for an extended experience</li>
+          <li>Every detail handled for a seamless event</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 5. Forex -->
+    <div class="row align-items-center section">
+      <div class="col-md-8">
+        <div class="vertical-number">5</div>
+        <h3 class="text-primary">Forex</h3>
+        <p>
+          Zenith Forex is a key vertical of Zenith Group, specializing in
+          offering reliable and efficient foreign exchange services. Currency
+          exchange for travel or handling international remittances, Zenith
+          Forex ensures smooth and hassle-free transactions for individuals
+          and businesses.
+        </p>
+        <ul class="feature-list">
+          <li>Competitive rates with full transparency</li>
+          <li>Quick and easy currency exchange</li>
+          <li>Secure international remittance services</li>
+          <li>Support for both individuals and businesses</li>
+          <li>Excellent customer service and guidance</li>
+          <li>Simplifying global money matters with ease</li>
+        </ul>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="./assets/images/pexels-alesiakozik-6770775.jpg" class="img-fluid" alt="Currency Exchange" />
+      </div>
+    </div>
+
+    <!-- 6. Visa -->
+    <div class="row align-items-center section">
+      <div class="col-md-4 text-center">
+        <img src="./assets/images/pexels-n-voitkevich-7235894.jpg" class="img-fluid" alt="Passport and Visa" />
+      </div>
+      <div class="col-md-8">
+        <div class="vertical-number">6</div>
+        <h3 class="text-primary">Visa</h3>
+        <p>
+          Zenith Visa is a dedicated vertical of Zenith Group, designed to
+          make the visa process smoother and hassle-free for all travelers. We
+          provide expert assistance for visa applications, documentation, and
+          guidance for both business and leisure travel.
+        </p>
+        <h5>Our Expertise Covers:</h5>
+        <ul class="feature-list">
+          <li>Student Visa – Pursue global education opportunities</li>
+          <li>
+            Business Visa – Facilitate your international corporate travel
+          </li>
+          <li>Startup Visa – Support for entrepreneurs expanding globally</li>
+          <li>Tourist Visa – Explore new destinations worry-free</li>
+          <li>Umrah Visa – Spiritual journeys made easier</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 7. Insurance -->
+    <div class="row align-items-center section">
+      <div class="col-md-8">
+        <div class="vertical-number">7</div>
+        <h3 class="text-primary">Insurance</h3>
+        <p>
+          Travel with confidence knowing Zenith Travel Insurance has you
+          covered every step of the way. Our comprehensive plans protect you
+          against unexpected medical emergencies, trip cancellations, lost
+          baggage, and other travel disruptions.
+        </p>
+        <ul class="feature-list">
+          <li>Coverage for medical, cancellations, and baggage</li>
+          <li>Simple online claims and fast processing</li>
+          <li>Stress-free experience with expert assistance</li>
+          <li>Tailored plans to fit your travel needs</li>
+          <li>Travel worry-free with complete peace of mind</li>
+        </ul>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="./assets/images/pexels-leeloothefirst-7163953.jpg" class="img-fluid" alt="Travel Insurance" />
+      </div>
+    </div>
+
+    <!-- 8. Senior Citizen -->
+    <div class="row align-items-center section">
+      <div class="col-md-4 text-center">
+        <img src="./assets/images/pexels-kampus-7551628.jpg" class="img-fluid" alt="Senior Citizen Travel" />
+      </div>
+      <div class="col-md-8">
+        <div class="vertical-number">8</div>
+        <h3 class="text-primary">Senior Citizen</h3>
+        <p>
+          We ensure a safe and comfortable travel experience for senior
+          citizens. Understanding their unique needs, our goal is to provide
+          the memorable vacation they've always wanted.
+        </p>
+        <ul class="feature-list">
+          <li>Personalized tours to dream destinations</li>
+          <li>Tailored travel services for senior citizens</li>
+          <li>Group travel with like-minded travellers</li>
+          <li>Opportunities to form new friendships</li>
+          <li>Focus on comfort, safety, and memorable experiences</li>
+          <li>Expert planners dedicated to their preferences</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 9. Luxury Stay -->
+    <div class="row align-items-center section">
+      <div class="col-md-8">
+        <div class="vertical-number">9</div>
+        <h3 class="text-primary">Luxury Stay</h3>
+        <p>
+          At Luxury Stays, we specialise in offering premium luxury camps set
+          in breathtaking natural surroundings, perfect for travellers seeking
+          comfort without compromising on the charm of the outdoors. Unlike
+          traditional hotels, our luxury camps blend elegance with
+          adventure—offering well-furnished camps, plush bedding, en-suite
+          bathrooms, and personalised service in serene destinations. Whether
+          you're unwinding under the stars in Kedarnath or waking up to scenic
+          views in Mahabaleshwar, our curated stays promise a unique and
+          indulgent experience.
         </p>
       </div>
-    </div>
-
-    <div class="container" style="margin-top: 80px">
-      <!-- 1. Holidays -->
-      <div class="row align-items-center section">
-        <div class="col-md-8">
-          <div class="vertical-number">1</div>
-          <h3 class="text-primary">Holidays</h3>
-          <p>
-            Zenith Holidays, a vertical of the Zenith Hospitality, specializes
-            in creating memorable travel experiences. From group tours to
-            customized tours, the company offers well-curated holiday packages
-            for a wide range of destinations.
-          </p>
-          <ul class="feature-list">
-            <li>Expert in group and customized tours</li>
-            <li>Wide range of domestic and international packages</li>
-            <li>Flights, hotels, VISA, sightseeing, and transfers</li>
-            <li>Focus on seamless and hassle-free travel</li>
-            <li>Value-for-money and high-quality services</li>
-            <li>Committed to customer satisfaction</li>
-            <li>Helping travellers explore the world with ease</li>
-          </ul>
-        </div>
-        <div class="col-md-4 text-center">
-          <img
-            src="./assets/images/pexels-pixabay-38238.jpg"
-            class="img-fluid"
-            alt="Holiday Travel"
-          />
-        </div>
-      </div>
-
-      <!-- 2. Hotels -->
-      <div class="row align-items-center section">
-        <div class="col-md-4 text-center">
-          <img
-            src="./assets/images/pexels-asman-chema-91897-594077.jpg"
-            class="img-fluid"
-            alt="Luxury Hotel"
-          />
-        </div>
-        <div class="col-md-8">
-          <div class="vertical-number">2</div>
-          <h3 class="text-primary">Hotels</h3>
-          <p>
-            Finding your ideal accommodation should be effortless—that's why
-            Zenith Hotels brings you a handpicked selection of stays across the
-            globe. We partner with trusted hotels, resorts, and boutique
-            properties to guarantee comfort, quality, and exceptional service
-            wherever you travel.
-          </p>
-          <ul class="feature-list">
-            <li>Wide range of global stays</li>
-            <li>From budget rooms to luxury retreats</li>
-            <li>Partnerships with top-rated properties</li>
-            <li>Guaranteed comfort and quality service</li>
-            <li>Exclusive offers and best deals</li>
-            <li>Flexible cancellation options</li>
-            <li>24/7 customer support for peace of mind</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 3. Flight -->
-      <div class="row align-items-center section">
-        <div class="col-md-8">
-          <div class="vertical-number">3</div>
-          <h3 class="text-primary">Flight</h3>
-          <p>
-            At Zenith Flights, we take the stress out of air travel by offering
-            seamless booking, unbeatable prices, and ultimate flexibility. Our
-            smart search technology scans thousands of options to find you the
-            best flights, routes, and schedules—all at competitive rates.
-          </p>
-          <ul class="feature-list">
-            <li>Hassle-free booking with best fares</li>
-            <li>Easy modifications and real-time updates</li>
-            <li>24/7 support for smooth travel</li>
-            <li>Multi-city and flexible travel options</li>
-            <li>Exclusive deals and loyalty rewards</li>
-            <li>Smart tech for perfect flight matches</li>
-            <li>Convenient and affordable air travel</li>
-          </ul>
-        </div>
-        <div class="col-md-4 text-center">
-          <img
-            src="./assets//images/pexels-pixabay-104826.jpg"
-            class="img-fluid"
-            alt="Aircraft Flight"
-          />
-        </div>
-      </div>
-
-      <!-- 4. MICE -->
-      <div class="row align-items-center section">
-        <div class="col-md-4 text-center">
-          <img
-            src="./assets/images/pexels-sokmeas-uy-113943-28314377.jpg"
-            class="img-fluid"
-            alt="Business Conference"
-          />
-        </div>
-        <div class="col-md-8">
-          <div class="vertical-number">4</div>
-          <h3 class="text-primary">MICE</h3>
-          <p>
-            MICE (Meetings, Incentives, Conferences, and Exhibitions) is a
-            specialized area of business tourism. It focuses on creating unique
-            programs and activities for corporate organizations, typically
-            involving conferences, business meetings, exhibitions, or fairs.
-          </p>
-          <ul class="feature-list">
-            <li>Flagship service and core strength of Zenith</li>
-            <li>
-              Complete planning with customized itineraries and familiarization
-              trips
-            </li>
-            <li>Flight bookings and visa assistance for smooth travel</li>
-            <li>Premium accommodations with curated meals and catering</li>
-            <li>Foreign exchange, travel insurance, and phone card support</li>
-            <li>Transfers, technical setup, and on-ground coordination</li>
-            <li>Post-event tours for an extended experience</li>
-            <li>Every detail handled for a seamless event</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 5. Forex -->
-      <div class="row align-items-center section">
-        <div class="col-md-8">
-          <div class="vertical-number">5</div>
-          <h3 class="text-primary">Forex</h3>
-          <p>
-            Zenith Forex is a key vertical of Zenith Group, specializing in
-            offering reliable and efficient foreign exchange services. Currency
-            exchange for travel or handling international remittances, Zenith
-            Forex ensures smooth and hassle-free transactions for individuals
-            and businesses.
-          </p>
-          <ul class="feature-list">
-            <li>Competitive rates with full transparency</li>
-            <li>Quick and easy currency exchange</li>
-            <li>Secure international remittance services</li>
-            <li>Support for both individuals and businesses</li>
-            <li>Excellent customer service and guidance</li>
-            <li>Simplifying global money matters with ease</li>
-          </ul>
-        </div>
-        <div class="col-md-4 text-center">
-          <img
-            src="./assets/images/pexels-alesiakozik-6770775.jpg"
-            class="img-fluid"
-            alt="Currency Exchange"
-          />
-        </div>
-      </div>
-
-      <!-- 6. Visa -->
-      <div class="row align-items-center section">
-        <div class="col-md-4 text-center">
-          <img
-            src="./assets/images/pexels-n-voitkevich-7235894.jpg"
-            class="img-fluid"
-            alt="Passport and Visa"
-          />
-        </div>
-        <div class="col-md-8">
-          <div class="vertical-number">6</div>
-          <h3 class="text-primary">Visa</h3>
-          <p>
-            Zenith Visa is a dedicated vertical of Zenith Group, designed to
-            make the visa process smoother and hassle-free for all travelers. We
-            provide expert assistance for visa applications, documentation, and
-            guidance for both business and leisure travel.
-          </p>
-          <h5>Our Expertise Covers:</h5>
-          <ul class="feature-list">
-            <li>Student Visa – Pursue global education opportunities</li>
-            <li>
-              Business Visa – Facilitate your international corporate travel
-            </li>
-            <li>Startup Visa – Support for entrepreneurs expanding globally</li>
-            <li>Tourist Visa – Explore new destinations worry-free</li>
-            <li>Umrah Visa – Spiritual journeys made easier</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 7. Insurance -->
-      <div class="row align-items-center section">
-        <div class="col-md-8">
-          <div class="vertical-number">7</div>
-          <h3 class="text-primary">Insurance</h3>
-          <p>
-            Travel with confidence knowing Zenith Travel Insurance has you
-            covered every step of the way. Our comprehensive plans protect you
-            against unexpected medical emergencies, trip cancellations, lost
-            baggage, and other travel disruptions.
-          </p>
-          <ul class="feature-list">
-            <li>Coverage for medical, cancellations, and baggage</li>
-            <li>Simple online claims and fast processing</li>
-            <li>Stress-free experience with expert assistance</li>
-            <li>Tailored plans to fit your travel needs</li>
-            <li>Travel worry-free with complete peace of mind</li>
-          </ul>
-        </div>
-        <div class="col-md-4 text-center">
-          <img
-            src="./assets/images/pexels-leeloothefirst-7163953.jpg"
-            class="img-fluid"
-            alt="Travel Insurance"
-          />
-        </div>
-      </div>
-
-      <!-- 8. Senior Citizen -->
-      <div class="row align-items-center section">
-        <div class="col-md-4 text-center">
-          <img
-            src="./assets/images/pexels-kampus-7551628.jpg"
-            class="img-fluid"
-            alt="Senior Citizen Travel"
-          />
-        </div>
-        <div class="col-md-8">
-          <div class="vertical-number">8</div>
-          <h3 class="text-primary">Senior Citizen</h3>
-          <p>
-            We ensure a safe and comfortable travel experience for senior
-            citizens. Understanding their unique needs, our goal is to provide
-            the memorable vacation they've always wanted.
-          </p>
-          <ul class="feature-list">
-            <li>Personalized tours to dream destinations</li>
-            <li>Tailored travel services for senior citizens</li>
-            <li>Group travel with like-minded travellers</li>
-            <li>Opportunities to form new friendships</li>
-            <li>Focus on comfort, safety, and memorable experiences</li>
-            <li>Expert planners dedicated to their preferences</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 9. Luxury Stay -->
-      <div class="row align-items-center section">
-        <div class="col-md-8">
-          <div class="vertical-number">9</div>
-          <h3 class="text-primary">Luxury Stay</h3>
-          <p>
-            At Luxury Stays, we specialise in offering premium luxury camps set
-            in breathtaking natural surroundings, perfect for travellers seeking
-            comfort without compromising on the charm of the outdoors. Unlike
-            traditional hotels, our luxury camps blend elegance with
-            adventure—offering well-furnished camps, plush bedding, en-suite
-            bathrooms, and personalised service in serene destinations. Whether
-            you're unwinding under the stars in Kedarnath or waking up to scenic
-            views in Mahabaleshwar, our curated stays promise a unique and
-            indulgent experience.
-          </p>
-        </div>
-        <div class="col-md-4 text-center">
-          <img
-            src="./assets/images/pexels-svh-manali-1801124329-28347471.jpg"
-            class="img-fluid"
-            alt="Luxury Camping"
-          />
-        </div>
-      </div>
-
-      <!-- 10. Weddings -->
-      <div class="row align-items-center section">
-        <div class="col-md-4 text-center">
-          <img
-            src="./assets/images/pexels-asadphoto-169198.jpg"
-            class="img-fluid"
-            alt="Destination Wedding"
-          />
-        </div>
-        <div class="col-md-8">
-          <div class="vertical-number">10</div>
-          <h3 class="text-primary">Weddings</h3>
-          <p>
-            At Zenith, our passion for creativity and innovation, along with
-            years of experience in event planning, gives us the edge in
-            designing and managing unforgettable destination weddings.
-          </p>
-          <ul class="feature-list">
-            <li>Experts in destination wedding planning</li>
-            <li>Global presence with strong local support</li>
-            <li>Seamless logistics with in-house transport fleet</li>
-            <li>Personalized themes and unforgettable setups</li>
-            <li>Trusted by couples around the world</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 11. Orchid Incoming -->
-      <div class="row align-items-center section">
-        <div class="col-md-8">
-          <div class="vertical-number">11</div>
-          <h3 class="text-primary">Orchid Incoming</h3>
-          <p>
-            To meet the growing demand for outbound travel from India, Orchid
-            began establishing its own offices in popular travel destinations
-            worldwide. It is a B2B holiday search Engine for Tour Operators and
-            travel agents. It's a 24 hour booking service.
-          </p>
-          <ul class="feature-list">
-            <li>
-              Indian agents traditionally relied on foreign partners for
-              bookings
-            </li>
-            <li>Zenith Group launched overseas offices in 2014</li>
-            <li>Boosted competitiveness and reduced dependency</li>
-            <li>Opened new opportunities for inbound and outbound travel</li>
-            <li>
-              Owned and operated Destination Management Company (DMC) locations
-            </li>
-            <li>Advantage over competitors relying on partnerships</li>
-            <li>Faster response times and high-quality service</li>
-          </ul>
-          <h5>Tech Integration:</h5>
-          <ul class="feature-list">
-            <li>Agent Dashboard</li>
-            <li>Contract Management - Sightseeing</li>
-            <li>Contract Management - Transfers</li>
-            <li>Contract Management – Car</li>
-          </ul>
-        </div>
-        <div class="col-md-4 text-center">
-          <img
-            src="./assets/images/pexels-barbara-marques-153698157-10624566.jpg"
-            class="img-fluid"
-            alt="Travel Technology"
-          />
-        </div>
-      </div>
-
-      <!-- 12. Events -->
-      <div class="row align-items-center section">
-        <div class="col-md-4 text-center">
-          <img
-            src="./assets/images/pexels-teddy-2263436.jpg"
-            class="img-fluid"
-            alt="Corporate Events"
-          />
-        </div>
-        <div class="col-md-8">
-          <div class="vertical-number">12</div>
-          <h3 class="text-primary">Events</h3>
-          <p>
-            At Zenith, unforgettable events are crafted with care and precision.
-            Whether it's to showcase products, motivate teams, or impress
-            partners, we design tailored event solutions to fit your goals and
-            budget.
-          </p>
-          <ul class="feature-list">
-            <li>Customized events to match your vision</li>
-            <li>
-              Expertise across global destinations like Bali, Dubai, Vegas
-            </li>
-            <li>End-to-end planning and execution</li>
-            <li>Stress-free experience with full support</li>
-            <li>High impact events within budget</li>
-            <li>Memorable moments that meet objectives</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 13. Umrah -->
-      <div class="row align-items-center section">
-        <div class="col-md-8">
-          <div class="vertical-number">13</div>
-          <h3 class="text-primary">Umrah</h3>
-          <p>
-            Zenith Hajj & Umrah Services is dedicated to providing seamless and
-            enriching pilgrimage experiences for travellers to Mecca and Medina.
-            Our services include complete travel arrangements, accommodation
-            bookings, visa processing, and guided tours of holy sites.
-          </p>
-          <ul class="feature-list">
-            <li>Complete Hajj & Umrah travel arrangements</li>
-            <li>Visa processing and accommodation bookings</li>
-            <li>Guided tours of holy sites</li>
-            <li>Focus on comfort, safety, and personalized support</li>
-            <li>Experienced team for a fulfilling pilgrimage</li>
-            <li>Assistance for both first-time and repeat visitors</li>
-            <li>Prioritizing your spiritual journey with care</li>
-          </ul>
-        </div>
-        <div class="col-md-4 text-center">
-          <img
-            src="./assets/images/pexels-talalih-14440333.jpg"
-            class="img-fluid"
-            alt="Kaaba Mecca Pilgrimage"
-          />
-        </div>
+      <div class="col-md-4 text-center">
+        <img src="./assets/images/pexels-svh-manali-1801124329-28347471.jpg" class="img-fluid" alt="Luxury Camping" />
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white pt-5 pb-4 mt-5">
-      <div class="container text-md-left">
-        <div class="row text-md-left">
-          <!-- About -->
-          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
-              MySite
-            </h5>
-            <p>
-              MySite is your go-to platform for amazing content and services. We
-              bring you the best design, experience, and performance.
-            </p>
-          </div>
+    <!-- 10. Weddings -->
+    <div class="row align-items-center section">
+      <div class="col-md-4 text-center">
+        <img src="./assets/images/pexels-asadphoto-169198.jpg" class="img-fluid" alt="Destination Wedding" />
+      </div>
+      <div class="col-md-8">
+        <div class="vertical-number">10</div>
+        <h3 class="text-primary">Weddings</h3>
+        <p>
+          At Zenith, our passion for creativity and innovation, along with
+          years of experience in event planning, gives us the edge in
+          designing and managing unforgettable destination weddings.
+        </p>
+        <ul class="feature-list">
+          <li>Experts in destination wedding planning</li>
+          <li>Global presence with strong local support</li>
+          <li>Seamless logistics with in-house transport fleet</li>
+          <li>Personalized themes and unforgettable setups</li>
+          <li>Trusted by couples around the world</li>
+        </ul>
+      </div>
+    </div>
 
-          <!-- Quick Links -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
-              Quick Links
-            </h5>
-            <p>
-              <a href="#" class="text-white" style="text-decoration: none"
-                >Home</a
-              >
-            </p>
-            <p>
-              <a
-                href="AboutUs.html"
-                class="text-white"
-                style="text-decoration: none"
-                >About</a
-              >
-            </p>
-            <p>
-              <a href="VM.html" class="text-white" style="text-decoration: none"
-                >Services</a
-              >
-            </p>
-            <p>
-              <a href="#" class="text-white" style="text-decoration: none"
-                >Contact</a
-              >
-            </p>
-          </div>
+    <!-- 11. Orchid Incoming -->
+    <div class="row align-items-center section">
+      <div class="col-md-8">
+        <div class="vertical-number">11</div>
+        <h3 class="text-primary">Orchid Incoming</h3>
+        <p>
+          To meet the growing demand for outbound travel from India, Orchid
+          began establishing its own offices in popular travel destinations
+          worldwide. It is a B2B holiday search Engine for Tour Operators and
+          travel agents. It's a 24 hour booking service.
+        </p>
+        <ul class="feature-list">
+          <li>
+            Indian agents traditionally relied on foreign partners for
+            bookings
+          </li>
+          <li>Zenith Group launched overseas offices in 2014</li>
+          <li>Boosted competitiveness and reduced dependency</li>
+          <li>Opened new opportunities for inbound and outbound travel</li>
+          <li>
+            Owned and operated Destination Management Company (DMC) locations
+          </li>
+          <li>Advantage over competitors relying on partnerships</li>
+          <li>Faster response times and high-quality service</li>
+        </ul>
+        <h5>Tech Integration:</h5>
+        <ul class="feature-list">
+          <li>Agent Dashboard</li>
+          <li>Contract Management - Sightseeing</li>
+          <li>Contract Management - Transfers</li>
+          <li>Contract Management – Car</li>
+        </ul>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="./assets/images/pexels-barbara-marques-153698157-10624566.jpg" class="img-fluid"
+          alt="Travel Technology" />
+      </div>
+    </div>
 
-          <!-- Contact -->
-          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
-              Contact
-            </h5>
-            <p><i class="bi bi-house-door-fill me-2"></i> New Delhi, India</p>
-            <p><i class="bi bi-envelope-fill me-2"></i> contact@mysite.com</p>
-            <p><i class="bi bi-telephone-fill me-2"></i> +91 9876543210</p>
-          </div>
+    <!-- 12. Events -->
+    <div class="row align-items-center section">
+      <div class="col-md-4 text-center">
+        <img src="./assets/images/pexels-teddy-2263436.jpg" class="img-fluid" alt="Corporate Events" />
+      </div>
+      <div class="col-md-8">
+        <div class="vertical-number">12</div>
+        <h3 class="text-primary">Events</h3>
+        <p>
+          At Zenith, unforgettable events are crafted with care and precision.
+          Whether it's to showcase products, motivate teams, or impress
+          partners, we design tailored event solutions to fit your goals and
+          budget.
+        </p>
+        <ul class="feature-list">
+          <li>Customized events to match your vision</li>
+          <li>
+            Expertise across global destinations like Bali, Dubai, Vegas
+          </li>
+          <li>End-to-end planning and execution</li>
+          <li>Stress-free experience with full support</li>
+          <li>High impact events within budget</li>
+          <li>Memorable moments that meet objectives</li>
+        </ul>
+      </div>
+    </div>
 
-          <!-- Social -->
-          <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
-            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
-              Follow us
-            </h5>
-            <a href="#" class="text-white me-4"
-              ><i class="bi bi-facebook"></i
-            ></a>
-            <a href="#" class="text-white me-4"
-              ><i class="bi bi-twitter"></i
-            ></a>
-            <a href="#" class="text-white me-4"
-              ><i class="bi bi-instagram"></i
-            ></a>
-            <a href="#" class="text-white me-4"
-              ><i class="bi bi-linkedin"></i
-            ></a>
-          </div>
+    <!-- 13. Umrah -->
+    <div class="row align-items-center section">
+      <div class="col-md-8">
+        <div class="vertical-number">13</div>
+        <h3 class="text-primary">Umrah</h3>
+        <p>
+          Zenith Hajj & Umrah Services is dedicated to providing seamless and
+          enriching pilgrimage experiences for travellers to Mecca and Medina.
+          Our services include complete travel arrangements, accommodation
+          bookings, visa processing, and guided tours of holy sites.
+        </p>
+        <ul class="feature-list">
+          <li>Complete Hajj & Umrah travel arrangements</li>
+          <li>Visa processing and accommodation bookings</li>
+          <li>Guided tours of holy sites</li>
+          <li>Focus on comfort, safety, and personalized support</li>
+          <li>Experienced team for a fulfilling pilgrimage</li>
+          <li>Assistance for both first-time and repeat visitors</li>
+          <li>Prioritizing your spiritual journey with care</li>
+        </ul>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="./assets/images/pexels-talalih-14440333.jpg" class="img-fluid" alt="Kaaba Mecca Pilgrimage" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white pt-5 pb-4 mt-5">
+    <div class="container text-md-left">
+      <div class="row text-md-left">
+        <!-- About -->
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+            MySite
+          </h5>
+          <p>
+            MySite is your go-to platform for amazing content and services. We
+            bring you the best design, experience, and performance.
+          </p>
         </div>
 
-        <hr class="mb-4" />
+        <!-- Quick Links -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+            Quick Links
+          </h5>
+          <p>
+            <a href="#" class="text-white" style="text-decoration: none">Home</a>
+          </p>
+          <p>
+            <a href="AboutUs.html" class="text-white" style="text-decoration: none">About</a>
+          </p>
+          <p>
+            <a href="VM.html" class="text-white" style="text-decoration: none">Services</a>
+          </p>
+          <p>
+            <a href="#" class="text-white" style="text-decoration: none">Contact</a>
+          </p>
+        </div>
 
-        <!-- Bottom Line -->
-        <div class="row align-items-center">
-          <div class="col-md-7 col-lg-8">
-            <p class="text-white">© 2025 MySite. All Rights Reserved.</p>
-          </div>
-          <div class="col-md-5 col-lg-4">
-            <p class="text-white text-end">Designed by You</p>
-          </div>
+        <!-- Contact -->
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+            Contact
+          </h5>
+          <p><i class="bi bi-house-door-fill me-2"></i> New Delhi, India</p>
+          <p><i class="bi bi-envelope-fill me-2"></i> contact@mysite.com</p>
+          <p><i class="bi bi-telephone-fill me-2"></i> +91 9876543210</p>
+        </div>
+
+        <!-- Social -->
+        <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+            Follow us
+          </h5>
+          <a href="#" class="text-white me-4"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white me-4"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="text-white me-4"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-white me-4"><i class="bi bi-linkedin"></i></a>
         </div>
       </div>
-    </footer>
 
-    <script>
-      const navbar = document.querySelector(".navbar");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-          navbar.classList.remove("navbar-transparent");
-          navbar.classList.add("navbar-scrolled");
-        } else {
-          navbar.classList.add("navbar-transparent");
-          navbar.classList.remove("navbar-scrolled");
-        }
-      });
-    </script>
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+      <hr class="mb-4" />
+
+      <!-- Bottom Line -->
+      <div class="row align-items-center">
+        <div class="col-md-7 col-lg-8">
+          <p class="text-white">© 2025 MySite. All Rights Reserved.</p>
+        </div>
+        <div class="col-md-5 col-lg-4">
+          <p class="text-white text-end">Designed by You</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.querySelector(".navbar");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        navbar.classList.remove("navbar-transparent");
+        navbar.classList.add("navbar-scrolled");
+      } else {
+        navbar.classList.add("navbar-transparent");
+        navbar.classList.remove("navbar-scrolled");
+      }
+    });
+  </script>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>
