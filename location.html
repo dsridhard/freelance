@@ -164,6 +164,29 @@
       margin: 8px auto 0;
       border-radius: 2px;
     }
+     .nav-link {
+      position: relative;
+      /* Required for ::after absolute positioning */
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      background: #007bff;
+      transition: width 0.3s ease, left 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+      left: 50%;
+    }
   </style>
   <!-- amCharts -->
   <script src="https://cdn.amcharts.com/lib/5/index.js"></script>

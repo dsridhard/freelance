@@ -88,28 +88,17 @@
       }
 
       /* Hover effects */
-      .navbar .nav-link:hover,
-      .navbar .dropdown-toggle:hover {
-        color: #d49605 !important;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
+      
 
-      .navbar .dropdown-item {
-        color: #333 !important;
-      }
 
-      .navbar .dropdown-item:hover {
-        color: #f9c74f !important;
-        background-color: #f8f9fa;
-      }
+      
 
       .navbar-scrolled .dropdown-item {
         color: #333 !important;
       }
 
       .navbar-scrolled .dropdown-item:hover {
-        color: #f9c74f !important;
+      
         background-color: #222;
       }
 
@@ -208,6 +197,29 @@
       .navbar-nav .nav-item {
         margin-right: 2.3rem;
       }
+       .nav-link {
+      position: relative;
+      /* Required for ::after absolute positioning */
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      background: #007bff;
+      transition: width 0.3s ease, left 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+      left: 50%;
+    }
     </style>
   </head>
 
