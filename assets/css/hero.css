@@ -1,0 +1,62 @@
+  /* Hero Image with overlay text */
+    .hero-container {
+      position: relative;
+      width: 100%;
+      max-height: 400px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .hero-container img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.7);
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      padding: 0 1rem;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-text p {
+      font-size: 1.25rem;
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+    }
+        .hero-section {
+      background-image: url('https://plus.unsplash.com/premium_photo-1679429320956-f6171b6f006b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      color: white;
+      padding: 120px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.1)"><polygon points="0,0 1000,100 1000,0"/></svg>');
+      background-size: cover;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }

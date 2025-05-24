@@ -1,460 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contact Us</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        background-color: #f8f9fa;
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
-      }
-
-      .navbar {
-        background-color: rgba(0, 0, 0, 0.6) !important;
-      }
-
-      .nav-item.dropdown:hover .dropdown-menu {
-        display: block;
-        margin-top: 0;
-      }
-
-      .navbar .navbar-brand,
-      .navbar .nav-link,
-      .navbar .dropdown-toggle,
-      .navbar .dropdown-item {
-        color: white !important;
-      }
-
-      .navbar .dropdown-menu {
-        background-color: #000;
-      }
-
-      .navbar .dropdown-item:hover {
-        color: #fff !important;
-        background-color: #444;
-      }
-
-      .navbar-nav .nav-item {
-        margin-right: 2.3rem;
-      }
-
-      /* Hero Image with overlay text */
-      .hero-container {
-        position: relative;
-        width: 100%;
-        max-height: 400px;
-        overflow: hidden;
-        margin-bottom: 2rem;
-      }
-
-      .hero-container img {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-        display: block;
-        filter: brightness(0.7);
-      }
-
-      .hero-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        text-align: center;
-        padding: 0 1rem;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      .hero-text h1 {
-        font-size: 3rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-      }
-
-      .hero-text p {
-        font-size: 1.25rem;
-        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
-      }
-
-      /* Contact form and text side by side */
-      .contact-section {
-        margin-bottom: 3rem;
-      }
-
-      .contact-text {
-        background: #fff;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        height: 100%;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        color: #333;
-      }
-
-      .contact-text h2 {
-        margin-bottom: 1rem;
-        font-weight: 700;
-      }
-
-      .contact-text p {
-        font-size: 1.1rem;
-        line-height: 1.6;
-      }
-
-      /* Form error styling */
-      .error-text {
-        color: #dc3545;
-        font-size: 0.875rem;
-        display: none;
-        transition: all 0.3s ease;
-      }
-
-      .is-invalid {
-        border-color: #dc3545 !important;
-      }
-
-      .btn-outline-primary:hover {
-        background-color: #2575fc;
-        color: white;
-        text-decoration: none;
-        box-shadow: 0 6px 15px rgba(37, 117, 252, 0.5);
-        transform: translateY(-2px);
-        transition: all 0.3s ease;
-      }
-
-      .badge.bg-primary {
-        font-size: 1.2rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-       .nav-link {
-      position: relative;
-      /* Required for ::after absolute positioning */
-      display: inline-block;
-      padding-bottom: 5px;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
     }
 
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 50%;
-      background: #007bff;
-      transition: width 0.3s ease, left 0.3s ease;
-      transform: translateX(-50%);
+    .carousel-item img {
+      height: 100vh;
+      object-fit: cover;
     }
+  </style>
+  <link rel="stylesheet" href="./assets/css/hero.css">
+  <link rel="stylesheet" href="./assets/css/form.css">
+  <link rel="stylesheet" href="./assets/css/navbar.css">
+</head>
 
-    .nav-link:hover::after {
-      width: 100%;
-      left: 50%;
-    }
-      .navbar-toggler {
-      border-color: rgba(0, 0, 0, 0.6);
-      /* Optional: darker border */
-    }
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html">Zenith Hospitality</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0,0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-    }
-    </style>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-  </head>
-
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="./index.html">Zenith Hospitality</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div
-          class="collapse navbar-collapse justify-content-center"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="./index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./aboutUs.html">AboutUs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./verticals.html">Our Verticals</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./Awards.html">Awards & Accolades</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./location.html">Locations</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./ContactUS.html">ContactUs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./CSR.html">CSR</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Hero Image with Text -->
-    <div class="hero-container">
-      <img src="./assets/images/img2.jpg" alt="Hospitality Image" />
-      <div class="hero-text">
-        <h1>Welcome to Zenith Hospitality</h1>
-        <p>Your comfort, our commitment</p>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./aboutUs.html">AboutUs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./verticals.html">Our Verticals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./Awards.html">Awards & Accolades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./location.html">Locations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./ContactUS.html">ContactUs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./CSR.html">CSR</a>
+          </li>
+        </ul>
       </div>
     </div>
+  </nav>
 
-    <!-- Contact section with form on left and text on right -->
-    <section class="container contact-section">
-      <div class="row gx-5">
-        <!-- Left: Contact Form -->
-        <div class="col-md-6">
-          <div class="card shadow">
-            <div class="card-body p-4">
-              <h2 class="card-title mb-4 text-center">Contact Us</h2>
-              <form id="contactForm" novalidate>
-                <div class="form-floating mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="name"
-                    placeholder="Name"
-                  />
-                  <label for="name">Name</label>
-                  <div id="nameError" class="error-text">
-                    Please enter your name
-                  </div>
+  <!-- Hero Image with Text -->
+  <div class="hero-container">
+    <img src="./assets/images/img2.jpg" alt="Hospitality Image" />
+    <div class="hero-text">
+      <h1>Welcome to Zenith Hospitality</h1>
+      <p>Your comfort, our commitment</p>
+    </div>
+  </div>
+
+  <!-- Contact section with form on left and text on right -->
+  <section class="container contact-section">
+    <div class="row gx-5">
+      <!-- Left: Contact Form -->
+      <div class="col-md-6">
+        <div class="card shadow">
+          <div class="card-body p-4">
+            <h2 class="card-title mb-4 text-center">Contact Us</h2>
+            <form id="contactForm" novalidate>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="name" placeholder="Name" />
+                <label for="name">Name</label>
+                <div id="nameError" class="error-text">
+                  Please enter your name
                 </div>
+              </div>
 
-                <div class="form-floating mb-3">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    placeholder="Email"
-                  />
-                  <label for="email">Email</label>
-                  <div id="emailError" class="error-text">
-                    Please enter a valid email
-                  </div>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" placeholder="Email" />
+                <label for="email">Email</label>
+                <div id="emailError" class="error-text">
+                  Please enter a valid email
                 </div>
+              </div>
 
-                <div class="form-floating mb-3">
-                  <textarea
-                    class="form-control"
-                    placeholder="Message"
-                    id="message"
-                    style="height: 120px"
-                  ></textarea>
-                  <label for="message">Message</label>
-                  <div id="messageError" class="error-text">
-                    Please enter a message
-                  </div>
+              <div class="form-floating mb-3">
+                <textarea class="form-control" placeholder="Message" id="message" style="height: 120px"></textarea>
+                <label for="message">Message</label>
+                <div id="messageError" class="error-text">
+                  Please enter a message
                 </div>
+              </div>
 
-                <button type="submit" class="btn btn-primary w-100">
-                  Send Message
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Some Text -->
-
-        <div class="col-12 col-md-6 d-flex align-items-center mb-4 mb-md-0">
-          <div
-            class="contact-text p-4 bg-white rounded-4 shadow-sm position-relative w-100"
-            style="border-left: 6px solid #2575fc"
-          >
-            <h2
-              class="fw-bold mb-3 border-bottom pb-2"
-              style="border-color: #2575fc; display: inline-block"
-            >
-              Get In Touch
-            </h2>
-
-            <p
-              class="d-flex align-items-start align-items-md-center mb-3"
-              style="font-size: 1rem; color: #333"
-            >
-              <span class="badge bg-primary me-3 rounded-circle p-2">
-                <i class="bi bi-question-circle-fill"></i>
-              </span>
-              <span
-                >Have questions or want to learn more about our services? Our
-                team is ready to assist you.</span
-              >
-            </p>
-
-            <p
-              class="d-flex align-items-start align-items-md-center mb-3"
-              style="font-size: 1rem; color: #333"
-            >
-              <span class="badge bg-primary me-3 rounded-circle p-2">
-                <i class="bi bi-star-fill"></i>
-              </span>
-              <span
-                >We pride ourselves on exceptional hospitality and look forward
-                to making your experience unforgettable.</span
-              >
-            </p>
-
-            <p
-              class="d-flex align-items-start align-items-md-center mb-4"
-              style="font-size: 1rem; color: #333"
-            >
-              <span class="badge bg-primary me-3 rounded-circle p-2">
-                <i class="bi bi-telephone-fill"></i>
-              </span>
-              <span
-                >Call us at <strong>+91 9876543210</strong> or email
-                <strong>contact@zenithhospitality.com</strong>.</span
-              >
-            </p>
-
-            <a
-              href="mailto:contact@zenithhospitality.com"
-              class="btn btn-outline-primary fw-semibold px-4"
-              style="transition: all 0.3s ease"
-            >
-              Contact Now <i class="bi bi-arrow-right ms-2"></i>
-            </a>
+              <button type="submit" class="btn btn-primary w-100">
+                Send Message
+              </button>
+            </form>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white pt-5 pb-4 mt-5">
-      <div class="container text-md-left">
-        <div class="row text-md-left">
-          <!-- About -->
-          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
-              MySite
-            </h5>
-            <p>
-              MySite is your go-to platform for amazing content and services. We
-              bring you the best design, experience, and performance.
-            </p>
-          </div>
+      <!-- Right: Some Text -->
 
-          <!-- Quick Links -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
-              Quick Links
-            </h5>
-            <p>
-              <a href="#" class="text-white" style="text-decoration: none"
-                >Home</a
-              >
-            </p>
-            <p>
-              <a
-                href="AboutUs.html"
-                class="text-white"
-                style="text-decoration: none"
-                >About</a
-              >
-            </p>
-            <p>
-              <a href="VM.html" class="text-white" style="text-decoration: none"
-                >Services</a
-              >
-            </p>
-            <p>
-              <a href="#" class="text-white" style="text-decoration: none"
-                >Contact</a
-              >
-            </p>
-          </div>
+      <div class="col-12 col-md-6 d-flex align-items-center mb-4 mb-md-0">
+        <div class="contact-text p-4 bg-white rounded-4 shadow-sm position-relative w-100"
+          style="border-left: 6px solid #2575fc">
+          <h2 class="fw-bold mb-3 border-bottom pb-2" style="border-color: #2575fc; display: inline-block">
+            Get In Touch
+          </h2>
 
-          <!-- Contact -->
-          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
-              Contact
-            </h5>
-            <p><i class="bi bi-house-door-fill me-2"></i> New Delhi, India</p>
-            <p><i class="bi bi-envelope-fill me-2"></i> contact@mysite.com</p>
-            <p><i class="bi bi-telephone-fill me-2"></i> +91 9876543210</p>
-          </div>
+          <p class="d-flex align-items-start align-items-md-center mb-3" style="font-size: 1rem; color: #333">
+            <span class="badge bg-primary me-3 rounded-circle p-2">
+              <i class="bi bi-question-circle-fill"></i>
+            </span>
+            <span>Have questions or want to learn more about our services? Our
+              team is ready to assist you.</span>
+          </p>
 
-          <!-- Social -->
-          <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
-            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
-              Follow us
-            </h5>
-            <a href="#" class="text-white me-4"
-              ><i class="bi bi-facebook"></i
-            ></a>
-            <a href="#" class="text-white me-4"
-              ><i class="bi bi-twitter"></i
-            ></a>
-            <a href="#" class="text-white me-4"
-              ><i class="bi bi-instagram"></i
-            ></a>
-            <a href="#" class="text-white me-4"
-              ><i class="bi bi-linkedin"></i
-            ></a>
-          </div>
-        </div>
+          <p class="d-flex align-items-start align-items-md-center mb-3" style="font-size: 1rem; color: #333">
+            <span class="badge bg-primary me-3 rounded-circle p-2">
+              <i class="bi bi-star-fill"></i>
+            </span>
+            <span>We pride ourselves on exceptional hospitality and look forward
+              to making your experience unforgettable.</span>
+          </p>
 
-        <hr class="mb-4" />
+          <p class="d-flex align-items-start align-items-md-center mb-4" style="font-size: 1rem; color: #333">
+            <span class="badge bg-primary me-3 rounded-circle p-2">
+              <i class="bi bi-telephone-fill"></i>
+            </span>
+            <span>Call us at <strong>+91 9876543210</strong> or email
+              <strong>contact@zenithhospitality.com</strong>.</span>
+          </p>
 
-        <!-- Bottom Line -->
-        <div class="row align-items-center">
-          <div class="col-md-7 col-lg-8">
-            <p class="text-white">© 2025 MySite. All Rights Reserved.</p>
-          </div>
-          <div class="col-md-5 col-lg-4">
-            <p class="text-white text-end">Designed by You</p>
-          </div>
+          <a href="mailto:contact@zenithhospitality.com" class="btn btn-outline-primary fw-semibold px-4"
+            style="transition: all 0.3s ease">
+            Contact Now <i class="bi bi-arrow-right ms-2"></i>
+          </a>
         </div>
       </div>
-    </footer>
-    <script>
-      const navbar = document.querySelector(".navbar");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-          navbar.classList.remove("navbar-transparent");
-          navbar.classList.add("navbar-scrolled");
-        } else {
-          navbar.classList.add("navbar-transparent");
-          navbar.classList.remove("navbar-scrolled");
-        }
-      });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white pt-5 pb-4 mt-5">
+    <div class="container text-md-left">
+      <div class="row text-md-left">
+        <!-- About -->
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+            MySite
+          </h5>
+          <p>
+            MySite is your go-to platform for amazing content and services. We
+            bring you the best design, experience, and performance.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+            Quick Links
+          </h5>
+          <p>
+            <a href="#" class="text-white" style="text-decoration: none">Home</a>
+          </p>
+          <p>
+            <a href="AboutUs.html" class="text-white" style="text-decoration: none">About</a>
+          </p>
+          <p>
+            <a href="VM.html" class="text-white" style="text-decoration: none">Services</a>
+          </p>
+          <p>
+            <a href="#" class="text-white" style="text-decoration: none">Contact</a>
+          </p>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+            Contact
+          </h5>
+          <p><i class="bi bi-house-door-fill me-2"></i> New Delhi, India</p>
+          <p><i class="bi bi-envelope-fill me-2"></i> contact@mysite.com</p>
+          <p><i class="bi bi-telephone-fill me-2"></i> +91 9876543210</p>
+        </div>
+
+        <!-- Social -->
+        <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+            Follow us
+          </h5>
+          <a href="#" class="text-white me-4"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white me-4"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="text-white me-4"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-white me-4"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+      <hr class="mb-4" />
+
+      <!-- Bottom Line -->
+      <div class="row align-items-center">
+        <div class="col-md-7 col-lg-8">
+          <p class="text-white">© 2025 MySite. All Rights Reserved.</p>
+        </div>
+        <div class="col-md-5 col-lg-4">
+          <p class="text-white text-end">Designed by You</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="./assets/js/scrollnav.js"></script>
+  <!-- Validation Script -->
+  <script src="./assets/js/formValidate.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>
