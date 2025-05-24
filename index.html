@@ -367,9 +367,9 @@
       margin-right: 2.3rem;
     }
 
-  
 
-   
+
+
 
     .dropdown-menu {
       padding: 10px 12px 10px 14px;
@@ -407,6 +407,32 @@
     .nav-link:hover::after {
       width: 100%;
       left: 50%;
+    }
+
+    .card img {
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      background-color: rgba(128, 128, 128, 0.4);
+      /* Transparent gray */
+      width: 50px;
+      height: 50px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-size: 60% 60%;
+      filter: invert(1);
+      /* Make arrow white */
     }
   </style>
 </head>
@@ -655,45 +681,154 @@
     </div>
   </section>
 
+<style>
+.featured-video {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.featured-video .video-details {
+  flex: 1 1 300px;
+}
+
+.featured-video .video-details h3 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.featured-video .video-details p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.featured-video .video-player {
+  flex: 1 1 500px;
+}
+
+.featured-video video {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+</style>
+
+<h2 class="text-center py-4 text-primary">Video Testimonials</h2>
+<div class="featured-video container my-5">
+  
+  <div class="video-details">
+    <h3>AR Salon</h3>
+    <p><strong>Arnil Pabalan</strong></p>
+    <p>
+      "I love Booker. I think Booker has made a big difference in my industry.
+      My growth, when I got Booker, doubled!"
+    </p>
+  </div>
+  <div class="video-player">
+    <video autoplay loop muted playsinline>
+      <source src="./assets/images/SampleVideo_1280x720_1mb.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
 
   <div class="video-testimonials mt-3">
-    <h2>Video Testimonials</h2>
+    
 
-    <div class="featured-video">
+    <!-- <div class="featured-video container my-5">
       <div class="video-details">
         <h3>AR Salon</h3>
         <p><strong>Arnil Pabalan</strong></p>
         <p>
-          "I love Booker. I think Booker has made a big difference in my
-          industry. My growth, when I got Booker, doubled!"
+          "I love Booker. I think Booker has made a big difference in my industry.
+          My growth, when I got Booker, doubled!"
         </p>
       </div>
-      <div class="video-player w-50">
-        <video width="500px" autoplay loop src="./assets/images/SampleVideo_1280x720_1mb.mp4" type="video/mp4"
-          alt="Video Thumbnail">
+      <div class="video-player">
+        <video autoplay loop muted playsinline>
+          <source src="./assets/images/SampleVideo_1280x720_1mb.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
+    </div> -->
+
+    <div>
+      <h4 class="text-center text-primary mb-4 ">More Videos</h4>
+
+      <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Carousel inner -->
+        <div class="carousel-inner">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="row justify-content-center g-4">
+              <div class="col-md-4">
+                <div class="card text-center p-3 shadow">
+                  <video width="100%" autoplay loop muted playsinline>
+                    <source src="./assets/images/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+                  </video>
+                  <h5 class="fw-bold mt-3">AR Salon</h5>
+                  <p class="text-muted">Salon</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card text-center p-3 shadow">
+                  <video width="100%" autoplay loop muted playsinline>
+                    <source src="./assets/images/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+                  </video>
+                  <h5 class="fw-bold mt-3">Willow Creek Day Spa</h5>
+                  <p class="text-muted">Day Spa</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="row justify-content-center g-4">
+              <div class="col-md-4">
+                <div class="card text-center p-3 shadow">
+                  <video width="100%" autoplay loop muted playsinline>
+                    <source src="./assets/images/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+                  </video>
+                  <h5 class="fw-bold mt-3">LashSpot Spa</h5>
+                  <p class="text-muted">Spa</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card text-center p-3 shadow">
+                  <video width="100%" autoplay loop muted playsinline>
+                    <source src="./assets/images/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+                  </video>
+                  <h5 class="fw-bold mt-3">Another Spa</h5>
+                  <p class="text-muted">Spa</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+
+      </div>
+
     </div>
 
-    <div class="more-videos">
-      <h4>More Videos</h4>
-      <div class="video-thumbnails">
-        <div class="thumbnail">
-          <img src="https://randomuser.me/api/portraits/women/31.jpg" alt="AR Salon" />
-          <div class="video-title">AR Salon</div>
-          <div class="video-subtitle">Salon</div>
-        </div>
-        <div class="thumbnail">
-          <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Willow Creek" />
-          <div class="video-title">Willow Creek Day Spa</div>
-          <div class="video-subtitle">Day Spa</div>
-        </div>
-        <div class="thumbnail">
-          <img src="https://randomuser.me/api/portraits/women/29.jpg" alt="LashSpot" />
-          <div class="video-title">LashSpot Spa</div>
-          <div class="video-subtitle">LashSpot Spa</div>
-        </div>
-      </div>
-    </div>
   </div>
 
   <!-- Bootstrap JS -->

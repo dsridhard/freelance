@@ -94,6 +94,57 @@
       width: 100%;
       left: 50%;
     }
+
+    /* Fade-in and slide-up animation */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Apply animation when the card appears */
+    .card {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    /* Stagger animation delays */
+    .card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .card:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    .card:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+
+    .card:nth-child(6) {
+      animation-delay: 0.6s;
+    }
+
+    /* Hover effect */
+    .card:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    }
   </style>
 </head>
 
@@ -157,9 +208,8 @@
     <div class="row g-4">
       <div class="col-md-4">
         <div class="card bg-white text-dark shadow h-100 p-3">
-          <img
-            src="./assets/images/tripexcel.png"
-            alt="TripAdvisor Certificate of Excellence" class="award-image img-fluid mb-3" />
+          <img src="./assets/images/tripexcel.png" alt="TripAdvisor Certificate of Excellence"
+            class="award-image img-fluid mb-3" />
 
           <h5>2017</h5>
           <p class="fw-bold">Certificate of Excellence</p>
@@ -171,11 +221,8 @@
 
       <div class="col-md-4">
         <div class="card bg-white text-dark shadow h-100 p-3">
-        <img
-  src="./assets/images/WorldTravelAwards.png"
-  alt="World Travel Awards"
-  class="award-image img-fluid mb-3 bg-white"
-/>
+          <img src="./assets/images/WorldTravelAwards.png" alt="World Travel Awards"
+            class="award-image img-fluid mb-3 bg-white" />
 
           <h5>2017</h5>
           <p class="fw-bold">World Travel Awards</p>
@@ -187,9 +234,8 @@
 
       <div class="col-md-4">
         <div class="card bg-white text-dark shadow h-100 p-3">
-          <img
-            src="https://cdn.worldgolfawards.com/shields/2/2015-winners-shield-M.png"
-            alt="World Golf Award" class="award-image img-fluid mb-3" />
+          <img src="https://cdn.worldgolfawards.com/shields/2/2015-winners-shield-M.png" alt="World Golf Award"
+            class="award-image img-fluid mb-3" />
           <h5>2015</h5>
           <p class="fw-bold">World Golf Award</p>
           <p class="small">
@@ -200,8 +246,8 @@
 
       <div class="col-md-4">
         <div class="card bg-white text-dark shadow h-100 p-3">
-          <img src="./assets/images/wta-winner-shield-2018-share.png"
-            alt="Leading Design Hotel" class="award-image img-fluid mb-3" />
+          <img src="./assets/images/wta-winner-shield-2018-share.png" alt="Leading Design Hotel"
+            class="award-image img-fluid mb-3" />
           <h5>October 2018</h5>
           <p class="fw-bold">Leading Design Hotel</p>
           <p class="small">
@@ -212,8 +258,8 @@
 
       <div class="col-md-4">
         <div class="card bg-white text-dark shadow h-100 p-3">
-          <img src="./assets/images/tripadvisory2018.png"
-            alt="Traveller’s Choice Award" class="award-image img-fluid mb-3" />
+          <img src="./assets/images/tripadvisory2018.png" alt="Traveller’s Choice Award"
+            class="award-image img-fluid mb-3" />
           <h5>2018</h5>
           <p class="fw-bold">Traveller’s Choice Award</p>
           <p class="small">
@@ -224,8 +270,7 @@
 
       <div class="col-md-4">
         <div class="card bg-white text-dark shadow h-100 p-3">
-          <img src="./assets/images/D-EDGE.png" alt="Client of the Year"
-            class="award-image img-fluid mb-3" />
+          <img src="./assets/images/D-EDGE.png" alt="Client of the Year" class="award-image img-fluid mb-3" />
           <h5>2019</h5>
           <p class="fw-bold">Client of the Year</p>
           <p class="small">
