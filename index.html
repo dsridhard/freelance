@@ -16,6 +16,7 @@
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
 
+  <!-- JavaScript to update keyword & description -->
 
   <!-- Custom CSS -->
   <style>
@@ -429,6 +430,22 @@
     .navbar-toggler-icon {
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0,0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
+
+    .fade-up {
+      animation: fadeUp 0.8s ease-in-out;
+    }
+
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 
@@ -473,19 +490,12 @@
   <!-- Carousel -->
   <!-- Section Wrapper with Relative Positioning -->
   <section style="position: relative; width: 100%; height: 100vh; overflow: hidden;">
-
-    <!-- Static Welcome Text with Dynamic Keywords (Centered) -->
-    <div style="
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    color: white;
-    text-align: center;
-  ">
-      <h3 class="text-white">
-        Zenith Hospitality | <span id="dynamic-keyword" class="slide-keyword text-danger fw-bold">Unforgettable Holidays</span>
+    <!-- Centered Static Text with Dynamic Keyword and Description -->
+    <div
+      style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; color: white; text-align: center;">
+      <h3 class="text-white display-6">
+        Zenith Hospitality |
+        <span id="dynamic-keyword" class="slide-keyword text-danger fw-bold display-5">Unforgettable Holidays</span>
       </h3>
       <p>
         <span id="dynamic-desc" class="slide-desc">
@@ -494,35 +504,33 @@
       </p>
     </div>
 
-    <!-- Image Carousel (No Text) -->
-    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1500">
-      <div class="carousel-inner">
+    <!-- Carousel Controlled by JavaScript -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="false" data-bs-interval="500">
+      <div class="carousel-inner" id="carousel-inner">
         <div class="carousel-item active">
-          <img src="./assets/images/img1.jpg" class="d-block w-100" alt="Image 1" />
+          <img src="./assets/images/holiday.jpg" class="d-block w-100" alt="Unforgettable Holidays" />
         </div>
         <div class="carousel-item">
-          <img src="./assets/images/img2.jpg" class="d-block w-100" alt="Image 2" />
+          <img src="./assets/images/hospitality.jpg" class="d-block w-100" alt="Smart Travel Solutions" />
         </div>
         <div class="carousel-item">
-          <img src="./assets/images/img3.jpg" class="d-block w-100" alt="Image 3" />
+          <img src="./assets/images/events.jpg" class="d-block w-100" alt="Events & Umrah Experts" />
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/images/seniorct.jpg" class="d-block w-100" alt="Senior Citizen Tours" />
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/images/wedding.jpg" class="d-block w-100" alt="Luxury Stays & Weddings" />
         </div>
       </div>
 
       <!-- Dark Overlay -->
-      <div style="
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.65);
-      z-index: 1;
-    "></div>
+      <div
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.65); z-index: 1;">
+      </div>
     </div>
-
   </section>
 
-  <!-- JavaScript to update keyword & description -->
   <script>
     const keywords = [
       "Unforgettable Holidays",
@@ -540,13 +548,41 @@
       "Exclusive venues and premium wedding arrangements."
     ];
 
+    const carouselItems = document.querySelectorAll("#carousel-inner .carousel-item");
+    const keywordElement = document.getElementById("dynamic-keyword");
+    const descElement = document.getElementById("dynamic-desc");
+
     let index = 0;
+
     setInterval(() => {
+      // Hide all carousel items
+      carouselItems.forEach(item => item.classList.remove("active"));
+
+      // Activate current image
+      carouselItems[index].classList.add("active");
+
+      // Update text content
+      keywordElement.innerText = keywords[index];
+      descElement.innerText = descriptions[index];
+
+      // Trigger fade-up animation
+      keywordElement.classList.remove("fade-up");
+      descElement.classList.remove("fade-up");
+
+      // Force reflow to restart animation
+      void keywordElement.offsetWidth;
+      void descElement.offsetWidth;
+
+      keywordElement.classList.add("fade-up");
+      descElement.classList.add("fade-up");
+
+      // Next slide index
       index = (index + 1) % keywords.length;
-      document.getElementById("dynamic-keyword").innerText = keywords[index];
-      document.getElementById("dynamic-desc").innerText = descriptions[index];
-    }, 4000); // Change every 4 seconds
+    }, 4000);
   </script>
+
+
+
 
 
   <!-- Placeholder Content -->
