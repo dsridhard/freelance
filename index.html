@@ -15,21 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-  <script>
-    const carousel = document.getElementById("heroCarousel");
 
-    carousel.addEventListener("slid.bs.carousel", function (e) {
-      const activeIndex = e.to;
-
-      if (activeIndex === 0) {
-        document.getElementById("slide1-keyword").innerText = "Homepage";
-      } else if (activeIndex === 1) {
-        document.getElementById("slide2-keyword").innerText = "Portfolio";
-      } else if (activeIndex === 2) {
-        document.getElementById("slide3-keyword").innerText = "Contact";
-      }
-    });
-  </script>
 
   <!-- Custom CSS -->
   <style>
@@ -434,6 +420,15 @@
       filter: invert(1);
       /* Make arrow white */
     }
+
+    .navbar-toggler {
+      border-color: rgba(0, 0, 0, 0.6);
+      /* Optional: darker border */
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0,0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
   </style>
 </head>
 
@@ -476,49 +471,83 @@
   </nav>
 
   <!-- Carousel -->
-  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="./assets/images/img1.jpg" class="d-block w-100" alt="Image 1" />
-        <div class="carousel-caption">
-          <h3 class="text-white">
-            Welcome to <span class="slide-keyword">Slide 1</span>
-          </h3>
-          <p>
-            This is the <span class="slide-desc">center text</span> for image
-            1.
-          </p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="./assets/images/img2.jpg" class="d-block w-100" alt="Image 2" />
-        <div class="carousel-caption">
-          <h3>Welcome to <span id="slide1-keyword">Slide 2</span></h3>
-          <p>
-            This is the <span id="slide1-desc">center text</span> for image 2.
-          </p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="./assets/images/img3.jpg" class="d-block w-100" alt="Image 3" />
-        <div class="carousel-caption">
-          <h3>Welcome to <span id="slide1-keyword">Slide 3</span></h3>
-          <p>
-            This is the <span id="slide1-desc">center text</span> for image 3.
-          </p>
-        </div>
-      </div>
-    </div>
+  <!-- Section Wrapper with Relative Positioning -->
+  <section style="position: relative; width: 100%; height: 100vh; overflow: hidden;">
+
+    <!-- Static Welcome Text with Dynamic Keywords (Centered) -->
     <div style="
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.65);
-          z-index: 1;
-        "></div>
-  </div>
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: white;
+    text-align: center;
+  ">
+      <h3 class="text-white">
+        Zenith Hospitality | <span id="dynamic-keyword" class="slide-keyword text-danger fw-bold">Unforgettable Holidays</span>
+      </h3>
+      <p>
+        <span id="dynamic-desc" class="slide-desc">
+          Luxurious stays, exotic tours, and all-in-one travel packages.
+        </span>
+      </p>
+    </div>
+
+    <!-- Image Carousel (No Text) -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1500">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./assets/images/img1.jpg" class="d-block w-100" alt="Image 1" />
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/images/img2.jpg" class="d-block w-100" alt="Image 2" />
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/images/img3.jpg" class="d-block w-100" alt="Image 3" />
+        </div>
+      </div>
+
+      <!-- Dark Overlay -->
+      <div style="
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 1;
+    "></div>
+    </div>
+
+  </section>
+
+  <!-- JavaScript to update keyword & description -->
+  <script>
+    const keywords = [
+      "Unforgettable Holidays",
+      "Smart Travel Solutions",
+      "Events & Umrah Experts",
+      "Senior Citizen Tours",
+      "Luxury Stays & Weddings"
+    ];
+
+    const descriptions = [
+      "Luxurious stays, exotic tours, and all-in-one travel packages.",
+      "Flights, Forex, Visa, and Travel Insurance under one roof.",
+      "MICE, destination weddings, spiritual Umrah tours and more.",
+      "Comfortable, curated experiences for senior travelers.",
+      "Exclusive venues and premium wedding arrangements."
+    ];
+
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % keywords.length;
+      document.getElementById("dynamic-keyword").innerText = keywords[index];
+      document.getElementById("dynamic-desc").innerText = descriptions[index];
+    }, 4000); // Change every 4 seconds
+  </script>
+
 
   <!-- Placeholder Content -->
   <div class="position-relative text-center text-white mt-5" style="height: 100vh; overflow: hidden">
@@ -681,83 +710,67 @@
     </div>
   </section>
 
-<style>
-.featured-video {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
-  background-color: #f8f9fa;
-  border-radius: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
+  <style>
+    .featured-video {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem;
+      background-color: #f8f9fa;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
 
-.featured-video .video-details {
-  flex: 1 1 300px;
-}
+    .featured-video .video-details {
+      flex: 1 1 300px;
+    }
 
-.featured-video .video-details h3 {
-  font-size: 1.75rem;
-  font-weight: bold;
-  color: #333;
-}
+    .featured-video .video-details h3 {
+      font-size: 1.75rem;
+      font-weight: bold;
+      color: #333;
+    }
 
-.featured-video .video-details p {
-  font-size: 1rem;
-  color: #555;
-}
+    .featured-video .video-details p {
+      font-size: 1rem;
+      color: #555;
+    }
 
-.featured-video .video-player {
-  flex: 1 1 500px;
-}
+    .featured-video .video-player {
+      flex: 1 1 500px;
+    }
 
-.featured-video video {
-  width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
-</style>
+    .featured-video video {
+      width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 
-<h2 class="text-center py-4 text-primary">Video Testimonials</h2>
-<div class="featured-video container my-5">
-  
-  <div class="video-details">
-    <h3>AR Salon</h3>
-    <p><strong>Arnil Pabalan</strong></p>
-    <p>
-      "I love Booker. I think Booker has made a big difference in my industry.
-      My growth, when I got Booker, doubled!"
-    </p>
+  <h2 class="text-center py-4 text-primary">Video Testimonials</h2>
+  <div class="featured-video container my-5">
+
+    <div class="video-details">
+      <h3>AR Salon</h3>
+      <p><strong>Arnil Pabalan</strong></p>
+      <p>
+        "I love Booker. I think Booker has made a big difference in my industry.
+        My growth, when I got Booker, doubled!"
+      </p>
+    </div>
+    <div class="video-player">
+      <video autoplay loop muted playsinline>
+        <source src="./assets/images/SampleVideo_1280x720_1mb.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
   </div>
-  <div class="video-player">
-    <video autoplay loop muted playsinline>
-      <source src="./assets/images/SampleVideo_1280x720_1mb.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
-</div>
 
   <div class="video-testimonials mt-3">
-    
 
-    <!-- <div class="featured-video container my-5">
-      <div class="video-details">
-        <h3>AR Salon</h3>
-        <p><strong>Arnil Pabalan</strong></p>
-        <p>
-          "I love Booker. I think Booker has made a big difference in my industry.
-          My growth, when I got Booker, doubled!"
-        </p>
-      </div>
-      <div class="video-player">
-        <video autoplay loop muted playsinline>
-          <source src="./assets/images/SampleVideo_1280x720_1mb.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div> -->
+
 
     <div>
       <h4 class="text-center text-primary mb-4 ">More Videos</h4>
